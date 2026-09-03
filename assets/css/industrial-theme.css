@@ -1,75 +1,67 @@
-/* Barkat Packaging — Bespoke Swiss Industrial Aesthetic CSS */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap');
+/* Barkat Packaging — Premium Editorial Industrial Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 :root {
-  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --color-kraft-400: #d4a373;
-  --color-kraft-500: #b6834d;
-  --color-kraft-600: #925f2d;
-  --color-amber-400: #fbbf24;
-  --color-amber-500: #f59e0b;
-  --color-amber-600: #d97706;
+  --color-kraft-50: #FAF6F0;
+  --color-kraft-100: #F4ECE1;
+  --color-kraft-200: #E6D5C1;
+  --color-kraft-500: #B7834E;
+  --color-kraft-600: #966432;
+  --color-kraft-800: #5C3A19;
 
-  --bg-dark-950: #050811;
-  --bg-dark-900: #0a0f1d;
-  --bg-dark-850: #10172a;
-  --border-dark: #1e293b;
-  --border-amber: rgba(245, 158, 11, 0.4);
+  --color-amber-500: #D97706;
+  --color-amber-600: #B45309;
+
+  --bg-page: #F8F7F4;
+  --bg-surface: #FFFFFF;
+  --border-light: #E5E2DC;
+  --border-focus: #B7834E;
+  
+  --text-main: #1C1917;
+  --text-muted: #57534E;
+  --text-light: #78716C;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-dark-950);
-  color: #f8fafc;
+  background-color: var(--bg-page);
+  color: var(--text-main);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 section {
-  scroll-margin-top: 110px;
-}
-
-h1, h2, h3, .font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.025em;
+  scroll-margin-top: 90px;
 }
 
 .font-mono {
   font-family: var(--font-mono);
 }
 
-/* Blueprint Grid Background */
-.bg-blueprint {
+/* Subtle Technical Grid */
+.bg-kraft-grid {
   background-image: 
-    linear-gradient(to right, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+    linear-gradient(to right, rgba(183, 131, 78, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(183, 131, 78, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-/* Subtle Technical Crosshair Markers */
-.blueprint-crosshair {
-  position: relative;
+/* Tactile Cardboard Tape Strip */
+.tape-strip {
+  background: #E8D8C3;
+  border-left: 2px dashed #CBB59D;
+  border-right: 2px dashed #CBB59D;
 }
-.blueprint-crosshair::before,
-.blueprint-crosshair::after {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-color: rgba(245, 158, 11, 0.6);
-  pointer-events: none;
-}
-.blueprint-crosshair::before { top: 0; left: 0; border-top: 2px solid; border-left: 2px solid; }
-.blueprint-crosshair::after { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
 
-/* Custom Range Slider */
+/* Range Slider */
 input[type=range] {
   -webkit-appearance: none;
   appearance: none;
   height: 6px;
-  background: #1e293b;
+  background: #E2E8F0;
   border-radius: 4px;
   outline: none;
 }
@@ -79,63 +71,63 @@ input[type=range]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #f59e0b;
-  border: 2px solid #050811;
+  background: #B7834E;
+  border: 2px solid #FFFFFF;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   transition: transform 0.15s ease;
 }
 input[type=range]::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
-/* Active Control Badges */
+/* Control Pills */
 .pill-tab {
-  background: #0a0f1d;
-  border: 1px solid #1e293b;
-  color: #94a3b8;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #475569;
   padding: 6px 14px;
   border-radius: 8px;
   font-size: 0.78rem;
-  font-weight: 700;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  transition: all 0.15s ease;
   cursor: pointer;
 }
 .pill-tab:hover {
-  border-color: #f59e0b;
-  color: #f8fafc;
+  border-color: #B7834E;
+  color: #1E293B;
 }
 .pill-tab.active {
-  background: #f59e0b;
-  color: #050811;
-  border-color: #f59e0b;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+  background: #1C1917;
+  color: #FFFFFF;
+  border-color: #1C1917;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* Mullen Stamp Seal Simulation */
+/* Mullen Certified Seal */
 .mullen-seal {
-  width: 110px;
-  height: 110px;
-  border: 3px dashed rgba(245, 158, 11, 0.7);
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #B7834E;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6px;
-  transform: rotate(-8deg);
-  background: rgba(245, 158, 11, 0.05);
+  padding: 4px;
+  transform: rotate(-6deg);
+  background: #FDFBF7;
 }
 
 /* 3D Canvas Viewport */
 #three-box-canvas {
   width: 100%;
-  height: 480px;
+  height: 440px;
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  background: radial-gradient(circle at center, #0f172a 0%, #050811 100%);
+  background: #EDEAE4;
 }
 
 /* Lightbox Modal */
@@ -147,8 +139,8 @@ input[type=range]::-webkit-slider-thumb:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 8, 17, 0.95);
-  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
   align-items: center;
   justify-content: center;
   padding: 20px;

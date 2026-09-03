@@ -96,11 +96,11 @@
     ctx.clearRect(0, 0, w, h);
 
     // Background
-    ctx.fillStyle = '#060a14';
+    ctx.fillStyle = '#f8f7f4';
     ctx.fillRect(0, 0, w, h);
 
     // Subtle grid lines
-    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.strokeStyle = 'rgba(0,0,0,0.05)';
     ctx.lineWidth = 1;
     for (var x = 0; x < w; x += 20) {
       ctx.beginPath();

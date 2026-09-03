@@ -40,7 +40,7 @@
 
     // Scene
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x070b14);
+    this.scene.background = new THREE.Color(0xedeae4);
 
     // Camera
     this.camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
@@ -107,14 +107,14 @@
 
   BoxVisualizer.prototype.setupStudioFloor = function() {
     var shadowPlaneGeo = new THREE.PlaneGeometry(100, 100);
-    var shadowPlaneMat = new THREE.ShadowMaterial({ opacity: 0.35 });
+    var shadowPlaneMat = new THREE.ShadowMaterial({ opacity: 0.16 });
     var shadowPlane = new THREE.Mesh(shadowPlaneGeo, shadowPlaneMat);
     shadowPlane.rotation.x = -Math.PI / 2;
     shadowPlane.position.y = -0.05;
     shadowPlane.receiveShadow = true;
     this.scene.add(shadowPlane);
 
-    var grid = new THREE.GridHelper(50, 25, 0xd97706, 0x1e293b);
+    var grid = new THREE.GridHelper(50, 25, 0xc4bcaf, 0xe0dad1);
     grid.position.y = -0.08;
     this.scene.add(grid);
   };
@@ -338,7 +338,7 @@
   };
 
   BoxVisualizer.prototype.buildDimensions = function(L, W, H) {
-    var mat = new THREE.LineBasicMaterial({ color: 0xf59e0b, linewidth: 2 });
+    var mat = new THREE.LineBasicMaterial({ color: 0x9a6a38, linewidth: 2 });
     var lGeo = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(-L / 2, 0.2, W / 2 + 1.2),
       new THREE.Vector3(L / 2, 0.2, W / 2 + 1.2)

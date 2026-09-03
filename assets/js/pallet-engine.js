@@ -113,7 +113,7 @@
     ctx.clearRect(0, 0, cw, ch);
 
     // Studio Background
-    ctx.fillStyle = '#060a14';
+    ctx.fillStyle = '#f8f7f4';
     ctx.fillRect(0, 0, cw, ch);
 
     // Scaling to fit canvas with margin
@@ -128,8 +128,8 @@
     var startY = (ch - palPixelH) / 2;
 
     // Draw Wooden Pallet Base
-    ctx.fillStyle = '#1e293b';
-    ctx.strokeStyle = '#d97706';
+    ctx.fillStyle = '#ede5d8';
+    ctx.strokeStyle = '#c2a884';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.roundRect(startX, startY, palPixelW, palPixelH, 6);
@@ -137,7 +137,7 @@
     ctx.stroke();
 
     // Pallet Slats
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.strokeStyle = 'rgba(0,0,0,0.06)';
     ctx.lineWidth = 1;
     var numSlats = 7;
     for (var s = 1; s < numSlats; s++) {
@@ -176,7 +176,7 @@
         ctx.strokeRect(bx + 1, by + 1, boxPW - 3, boxPH - 3);
 
         // Top seam / tape
-        ctx.strokeStyle = '#d97706';
+        ctx.strokeStyle = '#c2a884';
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(bx + 1, by + (boxPH / 2));
@@ -186,7 +186,7 @@
     }
 
     // Dimension labels on Pallet
-    ctx.fillStyle = '#f59e0b';
+    ctx.fillStyle = '#785434';
     ctx.font = 'bold 11px monospace';
     ctx.textAlign = 'center';
     ctx.fillText(pal.length + '" L', startX + (palPixelW / 2), startY - 8);

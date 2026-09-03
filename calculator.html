@@ -17,24 +17,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 bg-blueprint">
+<body class="bg-[#F8F7F4] text-stone-900 antialiased selection:bg-amber-500 selection:text-white bg-kraft-grid">
 
   <!-- TOP INDUSTRIAL HUD BAR -->
-  <aside aria-label="Facility status" class="bg-slate-950 border-b border-slate-800 text-[11px] py-2 px-4 sticky top-0 z-50 font-mono">
+  <aside aria-label="Facility status" class="bg-stone-900 text-stone-300 text-[11px] py-2 px-4 sticky top-0 z-50 font-mono border-b border-stone-800">
     <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-      <div class="flex items-center space-x-4 text-slate-400">
-        <span class="text-amber-400 font-bold flex items-center gap-1.5">
+      <div class="flex items-center space-x-4 text-stone-500">
+        <span class="text-amber-700 font-bold flex items-center gap-1.5">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           B2B SPECIFICATION & VOLUMETRIC ENGINE
         </span>
-        <span class="hidden lg:inline text-slate-500">|</span>
-        <span class="hidden lg:inline text-slate-400">Plot F 9, S.I.T.E. Hyderabad, Sindh</span>
+        <span class="hidden lg:inline text-stone-500">|</span>
+        <span class="hidden lg:inline text-stone-500">Plot F 9, S.I.T.E. Hyderabad, Sindh</span>
       </div>
       <div class="flex items-center space-x-6">
-        <a href="tel:03332622963" class="text-amber-400 font-bold hover:text-amber-300 transition flex items-center gap-1.5">
+        <a href="tel:03332622963" class="text-amber-700 font-bold hover:text-amber-300 transition flex items-center gap-1.5">
           <i class="fa-solid fa-phone"></i> 0333 2622963
         </a>
-        <a href="https://wa.me/923332622963" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center gap-1.5">
+        <a href="https://wa.me/923332622963" target="_blank" class="text-emerald-700 font-bold hover:text-emerald-300 transition flex items-center gap-1.5">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp Plant
         </a>
       </div>
@@ -42,22 +42,22 @@
   </aside>
 
   <!-- MAIN NAVIGATION -->
-  <nav class="sticky top-[35px] z-40 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/80">
+  <nav class="sticky top-[35px] z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/90 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
       <a href="index.html" class="flex items-center gap-3.5 group">
-        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 transition" />
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-400 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 transition" />
         <div>
-          <div class="text-2xl font-black text-white tracking-tight font-display">BARKAT <span class="text-amber-500">PACKAGING</span></div>
-          <div class="text-[10px] uppercase tracking-widest text-slate-400 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
+          <div class="text-2xl font-black text-stone-900 tracking-tight font-display">BARKAT <span class="text-amber-600">PACKAGING</span></div>
+          <div class="text-[10px] uppercase tracking-widest text-stone-500 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
         </div>
       </a>
-      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
-        <a href="index.html" class="hover:text-amber-400 transition">Home</a>
-        <a href="products.html" class="hover:text-amber-400 transition">Products</a>
-        <a href="agro-packaging.html" class="hover:text-amber-400 transition">Agro Export</a>
-        <a href="about.html" class="hover:text-amber-400 transition">Factory & Lab</a>
-        <a href="calculator.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">B2B Calculator</a>
-        <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-stone-600">
+        <a href="index.html" class="hover:text-amber-600 transition">Home</a>
+        <a href="products.html" class="hover:text-amber-600 transition">Products</a>
+        <a href="agro-packaging.html" class="hover:text-amber-600 transition">Agro Export</a>
+        <a href="about.html" class="hover:text-amber-600 transition">Factory & Lab</a>
+        <a href="calculator.html" class="text-amber-700 font-bold border-b-2 border-amber-400 pb-1">B2B Calculator</a>
+        <a href="contact.html" class="hover:text-amber-600 transition">Contact</a>
       </div>
       <div>
         <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
@@ -68,13 +68,13 @@
   </nav>
 
   <!-- CALCULATOR HEADER -->
-  <header class="py-12 border-b border-slate-800 bg-slate-900/30">
+  <header class="py-12 border-b border-stone-200 bg-[#FAF9F6]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-300 text-amber-700 text-xs font-mono font-bold uppercase tracking-wider mb-3">
         <i class="fa-solid fa-microchip"></i> Parametric B2B Cost & Specification Matrix
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white font-display">Corrugated Box Engineering Calculator</h1>
-      <p class="text-slate-400 text-sm mt-2">Design custom box dimensions, calculate precise blank sheet consumption, verify Mullen burst & ECT ratings, and preview ex-factory pricing.</p>
+      <h1 class="text-3xl sm:text-5xl font-black text-stone-950 font-display">Corrugated Box Engineering Calculator</h1>
+      <p class="text-stone-500 text-sm mt-2">Design custom box dimensions, calculate precise blank sheet consumption, verify Mullen burst & ECT ratings, and preview ex-factory pricing.</p>
     </div>
   </header>
 
@@ -87,30 +87,30 @@
         <!-- INPUT SPECIFICATIONS (LEFT 5 COLS) -->
         <div class="lg:col-span-5 space-y-6">
           
-          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
-            <h3 class="text-lg font-bold text-white font-display border-b border-slate-800 pb-3 flex items-center justify-between">
+          <div class="bg-white border border-stone-200 rounded-3xl p-6 shadow-2xl space-y-5">
+            <h3 class="text-lg font-bold text-stone-900 font-display border-b border-stone-200 pb-3 flex items-center justify-between">
               <span>1. Box Dimensions</span>
-              <span class="text-xs font-mono text-amber-400 font-normal">Inches (Internal)</span>
+              <span class="text-xs font-mono text-amber-700 font-normal">Inches (Internal)</span>
             </h3>
 
             <div class="grid grid-cols-3 gap-3">
               <div>
-                <label class="block text-[11px] font-mono text-slate-300 font-bold mb-1">Length (L)</label>
-                <input type="number" id="calc-l" value="16" min="4" max="60" step="0.5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
+                <label class="block text-[11px] font-mono text-stone-600 font-bold mb-1">Length (L)</label>
+                <input type="number" id="calc-l" value="16" min="4" max="60" step="0.5" class="w-full bg-stone-50 border border-stone-300 rounded-xl p-3 text-center text-amber-700 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
               </div>
               <div>
-                <label class="block text-[11px] font-mono text-slate-300 font-bold mb-1">Width (W)</label>
-                <input type="number" id="calc-w" value="12" min="4" max="48" step="0.5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
+                <label class="block text-[11px] font-mono text-stone-600 font-bold mb-1">Width (W)</label>
+                <input type="number" id="calc-w" value="12" min="4" max="48" step="0.5" class="w-full bg-stone-50 border border-stone-300 rounded-xl p-3 text-center text-amber-700 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
               </div>
               <div>
-                <label class="block text-[11px] font-mono text-slate-300 font-bold mb-1">Height (H)</label>
-                <input type="number" id="calc-h" value="10" min="3" max="48" step="0.5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
+                <label class="block text-[11px] font-mono text-stone-600 font-bold mb-1">Height (H)</label>
+                <input type="number" id="calc-h" value="10" min="3" max="48" step="0.5" class="w-full bg-stone-50 border border-stone-300 rounded-xl p-3 text-center text-amber-700 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
               </div>
             </div>
 
             <!-- Pre-set Industry Box Sizes -->
             <div>
-              <span class="block text-[10px] font-mono text-slate-400 uppercase mb-2">Quick Standard Industry Presets:</span>
+              <span class="block text-[10px] font-mono text-stone-500 uppercase mb-2">Quick Standard Industry Presets:</span>
               <div class="grid grid-cols-2 gap-2 text-xs font-mono">
                 <button type="button" class="pill-tab text-left" onclick="applyPreset(16, 12, 10, '5-ply')">Standard Master (16×12×10)</button>
                 <button type="button" class="pill-tab text-left" onclick="applyPreset(18, 12, 8, '3-ply')">E-Comm / Apparel (18×12×8)</button>
@@ -121,11 +121,11 @@
           </div>
 
           <!-- Board Structure & Paper Grade -->
-          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
-            <h3 class="text-lg font-bold text-white font-display border-b border-slate-800 pb-3">2. Ply & Fluting Selection</h3>
+          <div class="bg-white border border-stone-200 rounded-3xl p-6 shadow-2xl space-y-5">
+            <h3 class="text-lg font-bold text-stone-900 font-display border-b border-stone-200 pb-3">2. Ply & Fluting Selection</h3>
 
             <div>
-              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Corrugation Ply Structure:</label>
+              <label class="block text-[11px] font-mono text-stone-600 font-bold mb-2">Corrugation Ply Structure:</label>
               <div class="grid grid-cols-3 gap-2 text-xs font-mono">
                 <button type="button" class="pill-tab" id="btn-ply-3" onclick="selectPly('3-ply', this)">3-Ply Single</button>
                 <button type="button" class="pill-tab active" id="btn-ply-5" onclick="selectPly('5-ply', this)">5-Ply Double</button>
@@ -134,7 +134,7 @@
             </div>
 
             <div>
-              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Flute Profile:</label>
+              <label class="block text-[11px] font-mono text-stone-600 font-bold mb-2">Flute Profile:</label>
               <div class="grid grid-cols-4 gap-2 text-xs font-mono">
                 <button type="button" class="pill-tab" onclick="selectFlute('B', this)">B-Flute</button>
                 <button type="button" class="pill-tab" onclick="selectFlute('C', this)">C-Flute</button>
@@ -144,8 +144,8 @@
             </div>
 
             <div>
-              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Paper Grade:</label>
-              <select id="calc-paper" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs font-mono text-white focus:outline-none focus:border-amber-500" onchange="runFullCalc()">
+              <label class="block text-[11px] font-mono text-stone-600 font-bold mb-2">Paper Grade:</label>
+              <select id="calc-paper" class="w-full bg-stone-50 border border-stone-300 rounded-xl p-3 text-xs font-mono text-white focus:outline-none focus:border-amber-500" onchange="runFullCalc()">
                 <option value="std-kraft">Standard Recycled Kraft (140/120/140 GSM)</option>
                 <option value="virgin-kraft" selected>Virgin Export Kraft Liner (175/130/175 GSM)</option>
                 <option value="heavy-kraft">Extreme Heavy-Duty Testliner (220/150/220 GSM)</option>
@@ -154,10 +154,10 @@
             </div>
 
             <div>
-              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Order Quantity:</label>
+              <label class="block text-[11px] font-mono text-stone-600 font-bold mb-2">Order Quantity:</label>
               <div class="flex items-center gap-3">
-                <input type="number" id="calc-qty" value="2500" min="500" step="500" class="w-36 bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold text-sm" oninput="runFullCalc()" />
-                <span class="text-xs font-mono text-slate-400">units (Minimum 500 pcs)</span>
+                <input type="number" id="calc-qty" value="2500" min="500" step="500" class="w-36 bg-stone-50 border border-stone-300 rounded-xl p-3 text-center text-amber-700 font-mono font-bold text-sm" oninput="runFullCalc()" />
+                <span class="text-xs font-mono text-stone-500">units (Minimum 500 pcs)</span>
               </div>
             </div>
           </div>
@@ -168,82 +168,82 @@
         <div class="lg:col-span-7 space-y-6">
           
           <!-- 3D PREVIEW CARD -->
-          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl">
+          <div class="bg-white border border-stone-200 rounded-3xl p-5 shadow-2xl">
             <div class="flex justify-between items-center mb-3 text-xs font-mono">
-              <span class="text-amber-400 font-bold"><i class="fa-solid fa-cube mr-1"></i> Interactive 3D Perspective</span>
-              <span class="text-slate-400">Orbit with mouse / drag</span>
+              <span class="text-amber-700 font-bold"><i class="fa-solid fa-cube mr-1"></i> Interactive 3D Perspective</span>
+              <span class="text-stone-500">Orbit with mouse / drag</span>
             </div>
             <div id="three-box-canvas" style="height: 300px;" class="rounded-2xl"></div>
           </div>
 
           <!-- TECHNICAL SPECIFICATION SHEET -->
-          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-3 font-mono">
+          <div class="bg-white border border-stone-200 rounded-3xl p-6 shadow-2xl space-y-5">
+            <div class="flex justify-between items-center border-b border-stone-200 pb-3 font-mono">
               <div>
-                <span class="text-amber-400 text-xs font-bold uppercase">Engineering Output</span>
-                <h3 class="text-xl font-bold text-white font-display">Technical Spec Sheet</h3>
+                <span class="text-amber-700 text-xs font-bold uppercase">Engineering Output</span>
+                <h3 class="text-xl font-bold text-stone-900 font-display">Technical Spec Sheet</h3>
               </div>
               <div class="text-right">
-                <span class="text-[10px] text-slate-400 block">MANUFACTURER</span>
-                <strong class="text-xs text-emerald-400">BARKAT PACKAGING</strong>
+                <span class="text-[10px] text-stone-500 block">MANUFACTURER</span>
+                <strong class="text-xs text-emerald-700">BARKAT PACKAGING</strong>
               </div>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span class="text-slate-400 block text-[10px] uppercase">Calculated Volume</span>
-                <strong id="out-volume" class="text-amber-400 text-sm">1.11 CFT</strong>
-                <span id="out-cbm" class="text-[10px] text-slate-400 block">0.031 CBM</span>
+              <div class="bg-stone-50 p-3 rounded-xl border border-stone-200">
+                <span class="text-stone-500 block text-[10px] uppercase">Calculated Volume</span>
+                <strong id="out-volume" class="text-amber-700 text-sm">1.11 CFT</strong>
+                <span id="out-cbm" class="text-[10px] text-stone-500 block">0.031 CBM</span>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span class="text-slate-400 block text-[10px] uppercase">Blank Sheet Area</span>
+              <div class="bg-stone-50 p-3 rounded-xl border border-stone-200">
+                <span class="text-stone-500 block text-[10px] uppercase">Blank Sheet Area</span>
                 <strong id="out-sheet" class="text-white text-sm">0.83 m²</strong>
-                <span class="text-[10px] text-slate-400 block">per carton</span>
+                <span class="text-[10px] text-stone-500 block">per carton</span>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span class="text-slate-400 block text-[10px] uppercase">Mullen Burst (BST)</span>
-                <strong id="out-bst" class="text-amber-400 text-sm">22 kg/cm²</strong>
-                <span class="text-[10px] text-slate-400 block">~313 PSI rating</span>
+              <div class="bg-stone-50 p-3 rounded-xl border border-stone-200">
+                <span class="text-stone-500 block text-[10px] uppercase">Mullen Burst (BST)</span>
+                <strong id="out-bst" class="text-amber-700 text-sm">22 kg/cm²</strong>
+                <span class="text-[10px] text-stone-500 block">~313 PSI rating</span>
               </div>
-              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-                <span class="text-slate-400 block text-[10px] uppercase">Edge Crush (ECT)</span>
-                <strong id="out-ect" class="text-emerald-400 text-sm">55 lb/in</strong>
-                <span class="text-[10px] text-slate-400 block">9.6 kN/m</span>
+              <div class="bg-stone-50 p-3 rounded-xl border border-stone-200">
+                <span class="text-stone-500 block text-[10px] uppercase">Edge Crush (ECT)</span>
+                <strong id="out-ect" class="text-emerald-700 text-sm">55 lb/in</strong>
+                <span class="text-[10px] text-stone-500 block">9.6 kN/m</span>
               </div>
             </div>
 
             <!-- PALLET STACKING METRICS -->
-            <div class="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3 font-mono text-xs">
-              <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                <span class="text-slate-400 font-bold uppercase">Logistics Optimization (48"×40" Pallet):</span>
-                <span id="out-pallet-count" class="text-amber-400 font-bold">56 boxes / pallet</span>
+            <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-3 font-mono text-xs">
+              <div class="flex justify-between items-center border-b border-stone-200 pb-2">
+                <span class="text-stone-500 font-bold uppercase">Logistics Optimization (48"×40" Pallet):</span>
+                <span id="out-pallet-count" class="text-amber-700 font-bold">56 boxes / pallet</span>
               </div>
               <div class="grid grid-cols-2 gap-3 text-[11px]">
                 <div>20ft Container Load: <strong id="out-c20" class="text-white">560 boxes (10 pallets)</strong></div>
-                <div>40ft HC Container Load: <strong id="out-c40" class="text-emerald-400">1,176 boxes (21 pallets)</strong></div>
+                <div>40ft HC Container Load: <strong id="out-c40" class="text-emerald-700">1,176 boxes (21 pallets)</strong></div>
               </div>
             </div>
 
             <!-- EX-FACTORY COST BREAKDOWN -->
-            <div class="bg-slate-950 border border-amber-500/40 rounded-2xl p-5 space-y-4">
+            <div class="bg-stone-50 border border-amber-400 rounded-2xl p-5 space-y-4">
               <div class="flex flex-wrap justify-between items-end gap-2">
                 <div>
-                  <span class="text-[10px] font-mono text-slate-400 uppercase">Estimated Ex-Factory Wholesale Price</span>
-                  <div id="out-unit-price" class="text-3xl font-black text-amber-400 font-display">PKR 98 – 118</div>
-                  <span class="text-[10px] font-mono text-slate-400">per box (Ex-Mill S.I.T.E. Hyderabad)</span>
+                  <span class="text-[10px] font-mono text-stone-500 uppercase">Estimated Ex-Factory Wholesale Price</span>
+                  <div id="out-unit-price" class="text-3xl font-black text-amber-700 font-display">PKR 98 – 118</div>
+                  <span class="text-[10px] font-mono text-stone-500">per box (Ex-Mill S.I.T.E. Hyderabad)</span>
                 </div>
                 <div class="text-right font-mono text-xs">
-                  <span class="text-slate-400 block text-[10px]">TOTAL ESTIMATE (<span id="out-qty-label">2,500</span> PCS)</span>
-                  <strong id="out-total-price" class="text-xl font-bold text-white">PKR 270,000</strong>
+                  <span class="text-stone-500 block text-[10px]">TOTAL ESTIMATE (<span id="out-qty-label">2,500</span> PCS)</span>
+                  <strong id="out-total-price" class="text-xl font-bold text-stone-900">PKR 270,000</strong>
                 </div>
               </div>
 
               <div class="grid sm:grid-cols-2 gap-3 pt-2">
-                <button type="button" onclick="sendWhatsAppSpecQuote()" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition">
+                <button type="button" onclick="sendWhatsAppSpecQuote()" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-stone-900 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition">
                   <i class="fa-brands fa-whatsapp text-lg"></i> Send Spec to WhatsApp
                 </button>
-                <button type="button" onclick="window.print()" class="w-full py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-slate-700 transition">
-                  <i class="fa-solid fa-print text-amber-400"></i> Print Official Spec Sheet
+                <button type="button" onclick="window.print()" class="w-full py-4 rounded-xl bg-stone-900 text-white hover:bg-slate-700 text-slate-200 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-stone-300 transition">
+                  <i class="fa-solid fa-print text-amber-700"></i> Print Official Spec Sheet
                 </button>
               </div>
             </div>
@@ -258,13 +258,13 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 py-10 text-xs font-mono text-slate-500">
+  <footer class="bg-stone-900 border-t border-stone-800 py-10 text-xs font-mono text-stone-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-4">
       <div class="flex items-center gap-3">
         <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-8 h-8 rounded-lg object-cover" />
-        <span class="text-white font-bold font-display">BARKAT PACKAGING</span>
+        <span class="text-stone-900 font-bold font-display">BARKAT PACKAGING</span>
       </div>
-      <div class="text-slate-400">
+      <div class="text-stone-500">
         Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963
       </div>
       <div>© 2026 Barkat Packaging. All rights reserved.</div>
