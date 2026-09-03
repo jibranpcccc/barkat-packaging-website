@@ -3,171 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Barkat Packaging - 24+ Years Corrugated Box Manufacturer | S.I.T.E. Hyderabad</title>
-  <meta name="description" content="Established in May 2000 at Plot F 9, S.I.T.E. Area, Hyderabad, Barkat Packaging brings 24+ years of industrial excellence in corrugated cartons, heavy-duty master boxes, precision die-cutting, flexo printing, and in-house QC laboratory testing. Call Plant Manager: 0333 2622963." />
-  <meta name="robots" content="index, follow" />
+  <title>About Our Converting Plant & QC Lab | Barkat Packaging Hyderabad</title>
+  <meta name="description" content="24+ years of corrugated board manufacturing excellence at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh. Take a tour of our continuous corrugation lines, platen die-cutters, wire stitchers, and digital Mullen burst testing lab." />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              500: '#d97706',
-              600: '#b45309',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
-  <!-- Google Fonts & FontAwesome -->
+  <!-- Google Fonts & Industrial CSS -->
+  <link rel="stylesheet" href="assets/css/industrial-theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 bg-blueprint">
 
-  <!-- TOP BAR -->
-  <header class="bg-slate-900 border-b border-slate-800 text-xs py-2 px-4 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4 text-slate-300">
+  <!-- TOP INDUSTRIAL HUD BAR -->
+  <aside aria-label="Facility status" class="bg-slate-950 border-b border-slate-800 text-[11px] py-2 px-4 sticky top-0 z-50 font-mono">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4 text-slate-400">
         <span class="text-amber-400 font-bold flex items-center gap-1.5">
-          <i class="fa-solid fa-industry"></i> Established May 2000 • S.I.T.E. Hyderabad
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          24+ YEARS INDUSTRIAL HERITAGE • EST. MAY 2000
         </span>
-        <span class="hidden md:inline text-slate-400">
-          <i class="fa-solid fa-location-dot text-amber-500"></i> Plot F 9, S.I.T.E. Area, Hyderabad, 71800
-        </span>
+        <span class="hidden lg:inline text-slate-500">|</span>
+        <span class="hidden lg:inline text-slate-400">Plot F 9, S.I.T.E. Hyderabad, Sindh</span>
       </div>
-      <div class="flex items-center space-x-5">
-        <a href="tel:03332622963" class="text-amber-400 font-bold hover:underline">0333 2622963</a>
-        <a href="https://wa.me/923332622963?text=Hi%20Barkat%20Packaging,%20I%20want%20to%20visit%20your%20factory" target="_blank" class="text-emerald-400 font-bold hover:underline">WhatsApp</a>
+      <div class="flex items-center space-x-6">
+        <a href="tel:03332622963" class="text-amber-400 font-bold hover:text-amber-300 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-phone"></i> 0333 2622963
+        </a>
+        <a href="https://wa.me/923332622963" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
+        </a>
       </div>
     </div>
-  </header>
+  </aside>
 
-  <!-- NAVBAR -->
-  <nav class="sticky top-[33px] z-40 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
+  <!-- MAIN NAVIGATION -->
+  <nav class="sticky top-[35px] z-40 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-lg shadow-amber-500/20" />
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 transition" />
         <div>
-          <div class="text-2xl font-black text-white tracking-tight">BARKAT <span class="text-amber-500">PACKAGING</span></div>
-          <div class="text-[11px] uppercase tracking-widest text-slate-400 font-medium">S.I.T.E. Hyderabad • Factory Direct</div>
+          <div class="text-2xl font-black text-white tracking-tight font-display">BARKAT <span class="text-amber-500">PACKAGING</span></div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-400 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
         </div>
       </a>
-      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
         <a href="index.html" class="hover:text-amber-400 transition">Home</a>
         <a href="products.html" class="hover:text-amber-400 transition">Products</a>
         <a href="agro-packaging.html" class="hover:text-amber-400 transition">Agro Export</a>
-        <a href="about.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">About Us</a>
-        <a href="calculator.html" class="hover:text-amber-400 transition">Quote Calculator</a>
+        <a href="about.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Factory & Lab</a>
+        <a href="calculator.html" class="hover:text-amber-400 transition">B2B Calculator</a>
         <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>
       </div>
       <div>
-        <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition">
-          <i class="fa-solid fa-phone"></i> 0333 2622963
+        <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
+          <i class="fa-solid fa-phone-volume"></i> 0333 2622963
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="py-16 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-950 border-b border-slate-800">
+  <!-- ABOUT HERO -->
+  <header class="py-16 border-b border-slate-800 bg-slate-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase">
-          <i class="fa-solid fa-certificate"></i> Established May 2000 • 24+ Years of Leadership
-        </div>
-        <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight">
-          Sindh's Trusted Corrugated Box Factory <br/>
-          <span class="text-amber-400">At Plot F 9, S.I.T.E. Hyderabad.</span>
-        </h1>
-        <p class="text-slate-300 text-base leading-relaxed">
-          For nearly a quarter-century, Barkat Packaging has provided Sindh’s textile mills, agro-exporters, and industrial manufacturers with direct-from-mill corrugated cartons — cutting out middleman commissions and eliminating the 160-km freight penalty of sourcing from Karachi.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANT & MACHINERY -->
-  <section class="py-16 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <h2 class="text-3xl font-black text-white">Factory Infrastructure & Plant Machinery</h2>
-        <p class="text-slate-400 text-sm mt-2">In-house converting lines for high-speed manufacturing.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-          <img src="assets/images/barkat-packaging-kraft-paper-rolls-corrugator-reel-stand-sindh.jpg" alt="High-Speed Corrugation Line Kraft Reels" class="w-full h-56 object-cover" />
-          <div class="p-6">
-            <span class="text-amber-400 text-xs font-bold uppercase">Continuous Board Production</span>
-            <h3 class="text-xl font-bold text-white mt-1 mb-2">High-Speed Corrugation Line</h3>
-            <p class="text-slate-400 text-sm">Multi-ply continuous corrugator bonding virgin Kraft paper with steam heat and organic starch glue. Converts B, C, E, BC double-wall, and 7-ply heavy boards.</p>
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-industry"></i> Plant Infrastructure
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white font-display leading-tight">
+            SINDH'S DIRECT <br/>
+            <span class="text-amber-400">CORRUGATION MILL.</span>
+          </h1>
+          <p class="text-slate-300 text-base leading-relaxed">
+            Established in <strong>May 2000</strong> at <strong>Plot F 9, S.I.T.E. Industrial Area, Hyderabad</strong>, Barkat Packaging has operated for over two decades as the foundational packaging backbone for Sindh’s industrial manufacturing, textile spinning mills in Kotri, and agricultural export harvests in Mirpur Khas and Tando Allahyar.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 font-mono text-xs">
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-500 block text-[10px] uppercase">Established</span>
+              <strong class="text-amber-400 text-base">May 2000</strong>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-500 block text-[10px] uppercase">Daily Production</span>
+              <strong class="text-white text-base">50,000+ Boxes</strong>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-500 block text-[10px] uppercase">QC Testing</span>
+              <strong class="text-emerald-400 text-base">ISO 3037 / TAPPI</strong>
+            </div>
           </div>
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-          <img src="assets/images/barkat-packaging-heavy-duty-platen-die-cutting-press-machine.jpg" alt="Precision Platen Die-Cutting Press" class="w-full h-56 object-cover" />
-          <div class="p-6">
-            <span class="text-amber-400 text-xs font-bold uppercase">CAD Die-Cutting & Creasing</span>
-            <h3 class="text-xl font-bold text-white mt-1 mb-2">Precision Platen Die-Cutting Press</h3>
-            <p class="text-slate-400 text-sm">Heavy industrial platen die-cutter achieving ±0.5mm accuracy for self-locking mailers, ventilated mango export boxes, and custom internal partition grids.</p>
-          </div>
-        </div>
-
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-          <img src="assets/images/barkat-packaging-die-cut-wooden-blocks-custom-molds.jpg" alt="Custom Die Tooling & Wooden Molds" class="w-full h-56 object-cover" />
-          <div class="p-6">
-            <span class="text-amber-400 text-xs font-bold uppercase">Tooling & Printing</span>
-            <h3 class="text-xl font-bold text-white mt-1 mb-2">Custom Die Tooling & Flexo Presses</h3>
-            <p class="text-slate-400 text-sm">In-house wooden die blocks and high-definition flexographic printing for company branding, legal regulatory icons, and batch barcodes.</p>
-          </div>
-        </div>
-
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-          <img src="assets/images/barkat-packaging-corrugated-box-heavy-wire-stitching-hyderabad.jpg" alt="Heavy Galvanized Steel Wire Stitching" class="w-full h-56 object-cover" />
-          <div class="p-6">
-            <span class="text-amber-400 text-xs font-bold uppercase">Structural Fastening</span>
-            <h3 class="text-xl font-bold text-white mt-1 mb-2">Heavy-Duty Box Wire Stitching</h3>
-            <p class="text-slate-400 text-sm">Galvanized high-tensile steel wire stitching and automated folder-gluers providing maximum joint shear strength for 5-ply master export shipping cartons.</p>
+        <div class="lg:col-span-5">
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl space-y-4">
+            <div class="rounded-2xl overflow-hidden border border-slate-800 h-64 relative">
+              <img src="assets/images/barkat-packaging-factory-main-gate-logistics-bay.jpg" alt="Barkat Packaging Factory Entrance S.I.T.E. Hyderabad" class="w-full h-full object-cover" />
+              <div class="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-mono text-amber-400 border border-slate-800">
+                Plot F 9, S.I.T.E. Hyderabad Main Gate & Logistics Loading Bay
+              </div>
+            </div>
+            <p class="text-xs font-mono text-slate-400 leading-relaxed">
+              Equipped with deep loading docks built to accommodate 20ft and 40ft container freight trucks without blocking S.I.T.E. industrial roads.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- QUALITY CONTROL LAB -->
-  <section class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <h2 class="text-3xl font-black text-white">In-House Quality Control Laboratory</h2>
-        <p class="text-slate-400 text-sm mt-2">Every production lot is lab-calibrated before dispatch.</p>
+  <!-- MACHINERY SHOWCASE -->
+  <main class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-black text-white font-display">Converting Machinery Fleet</h2>
+        <p class="text-slate-400 text-xs mt-1">Direct from plant floor photography. No stock models.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
-          <div class="text-amber-400 font-bold text-sm mb-2"><i class="fa-solid fa-gauge-high"></i> Bursting Strength (BST)</div>
-          <p class="text-slate-400 text-xs">Digital Mullen tester applying hydraulic pressure to verify puncture resistance in kg/cm² and PSI.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="h-60 overflow-hidden">
+            <img src="assets/images/barkat-packaging-heavy-duty-platen-die-cutting-press.jpg" alt="Platen Die Cutting Press" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Die-Cutting</span>
+            <h3 class="text-lg font-bold text-white font-display">Heavy Industrial Platen Die-Cutter</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Equipped with precision laser-ruled wooden die blocks for cutting complex self-locking trays, ventilation holes for mango boxes, and display packaging.
+            </p>
+          </div>
         </div>
-        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
-          <div class="text-amber-400 font-bold text-sm mb-2"><i class="fa-solid fa-layer-group"></i> Edge Crush Test (ECT)</div>
-          <p class="text-slate-400 text-xs">Measures fluting column crush strength to certify multi-tier warehouse pallet stacking safety.</p>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="h-60 overflow-hidden">
+            <img src="assets/images/barkat-packaging-rotary-slotter-box-creasing-machine.jpg" alt="Rotary Slotter and Creaser" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Slotting & Creasing</span>
+            <h3 class="text-lg font-bold text-white font-display">Rotary Slotting & Creasing Line</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Ensures flap score lines are creased with surgical accuracy (±0.5mm), eliminating box folding resistance and ensuring perfect square assembly on client packing lines.
+            </p>
+          </div>
         </div>
-        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
-          <div class="text-amber-400 font-bold text-sm mb-2"><i class="fa-solid fa-droplet"></i> Cobb Water Absorptiveness</div>
-          <p class="text-slate-400 text-xs">Cobb 60-second sizing tester ensuring cold-chain boxes resist 90% humidity during reefer transit.</p>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+          <div class="h-60 overflow-hidden">
+            <img src="assets/images/barkat-packaging-heavy-duty-box-wire-stitching-hyderabad.jpg" alt="Wire Stitcher" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Assembly Fastening</span>
+            <h3 class="text-lg font-bold text-white font-display">Heavy Wire Stitching Stations</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              Industrial galvanized steel box wire stitching designed specifically for heavy export crates, oil carton masters, and textile cartons that cannot risk glue failure under heat.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- IN-HOUSE QC TESTING LAB -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6">
+        <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-amber-400 text-xs font-mono font-bold uppercase">Quality Assurance Protocols</span>
+            <h3 class="text-2xl font-bold text-white font-display">In-House Digital Testing Laboratory</h3>
+          </div>
+          <div class="text-xs font-mono text-emerald-400 font-bold">
+            <i class="fa-solid fa-circle-check"></i> 100% Batch Sampling Tested
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 text-xs font-mono">
+          <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-2">
+            <div class="text-amber-400 text-xl font-black font-display">01. Mullen BST Test</div>
+            <p class="text-slate-400 leading-relaxed">
+              Hydraulic burst tester clamps board samples and measures the hydrostatic pressure (in kg/cm² and PSI) required to burst the paper web.
+            </p>
+          </div>
+          <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-2">
+            <div class="text-amber-400 text-xl font-black font-display">02. Edge Crush (ECT)</div>
+            <p class="text-slate-400 leading-relaxed">
+              Evaluates the vertical compression strength of the fluted column to verify stacking safety factors on multi-tier warehouse pallets.
+            </p>
+          </div>
+          <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-2">
+            <div class="text-amber-400 text-xl font-black font-display">03. Cobb Moisture Sizing</div>
+            <p class="text-slate-400 leading-relaxed">
+              Measures liquid penetration into liners to guarantee cold-chain survival inside humid sea containers (Cobb < 28 g/m²).
+            </p>
+          </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 space-y-2">
-      <p class="text-slate-400 font-bold">Barkat Packaging — Corrugated Box & Packaging Manufacturer</p>
-      <p>Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963</p>
-      <p>© 2026 Barkat Packaging. All rights reserved.</p>
+  <footer class="bg-slate-950 border-t border-slate-800 py-10 text-xs font-mono text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-8 h-8 rounded-lg object-cover" />
+        <span class="text-white font-bold font-display">BARKAT PACKAGING</span>
+      </div>
+      <div class="text-slate-400">
+        Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963
+      </div>
+      <div>© 2026 Barkat Packaging. All rights reserved.</div>
     </div>
   </footer>
 

@@ -4,37 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barkat Packaging | Sindh's Premier Corrugated Box Manufacturer | S.I.T.E. Hyderabad</title>
-  <meta name="description" content="Sindh's leading corrugated carton manufacturer at Plot F 9, S.I.T.E. Hyderabad. Heavy-duty 3-ply, 5-ply, 7-ply shipping boxes, custom printed packaging, and agro fruit export cartons at direct factory rates. Call 0333 2622963." />
+  <meta name="description" content="Sindh's leading B2B corrugated carton manufacturer at Plot F 9, S.I.T.E. Hyderabad. Heavy-duty 3-ply, 5-ply, 7-ply shipping boxes, ventilated mango export cartons, and custom packaging. Interactive 3D box configurator, live quote calculator, and factory-direct wholesale pricing. Call 0333 2622963." />
+  <meta name="keywords" content="corrugated box manufacturer hyderabad, packaging company sindh, master shipping cartons, 5 ply boxes, mango export packaging, site industrial area hyderabad, barkat packaging" />
   <meta name="robots" content="index, follow" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              500: '#d97706',
-              600: '#b45309',
-            }
-          }
-        }
-      }
-    }
-  </script>
 
-  <!-- Google Fonts & FontAwesome -->
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="stylesheet" href="assets/css/industrial-theme.css" />
+
+  <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Three.js (r128) & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
   <!-- LocalBusiness Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Manufacturer"],
+    "@id": "https://jibranpcccc.github.io/barkat-packaging-website/#business",
     "name": "Barkat Packaging",
+    "image": "https://jibranpcccc.github.io/barkat-packaging-website/assets/images/barkat-packaging-logo.jpg",
     "telephone": "+923332622963",
     "email": "jibranpccc@gmail.com",
+    "url": "https://jibranpcccc.github.io/barkat-packaging-website/",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Plot F 9, S.I.T.E. Industrial Area",
@@ -48,293 +46,942 @@
       "latitude": 25.39689,
       "longitude": 68.35685
     },
-    "hasMap": "https://maps.google.com/?cid=305341297154128408",
-    "priceRange": "$$"
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "18:30"
+    },
+    "hasMap": "https://maps.google.com/?cid=305341297154128408"
   }
   </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 bg-blueprint">
 
-  <!-- TOP BAR -->
-  <header class="bg-slate-900 border-b border-slate-800 text-xs py-2 px-4 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4 text-slate-300">
+  <!-- TOP INDUSTRIAL HUD BAR -->
+  <aside aria-label="Facility status" class="bg-slate-950 border-b border-slate-800 text-[11px] py-2 px-4 sticky top-0 z-50 font-mono">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4 text-slate-400">
         <span class="text-amber-400 font-bold flex items-center gap-1.5">
-          <i class="fa-solid fa-industry"></i> Direct Corrugated Mill & Packaging Plant
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          DIRECT CORRUGATION MILL & CONVERTING PLANT
         </span>
-        <span class="hidden md:inline text-slate-400">
-          <i class="fa-solid fa-location-dot text-amber-500"></i> Plot F 9, S.I.T.E. Area, Hyderabad, 71800
+        <span class="hidden lg:inline text-slate-500">|</span>
+        <span class="hidden lg:inline text-slate-400">
+          <i class="fa-solid fa-location-dot text-amber-500"></i> PLOT F 9, S.I.T.E. HYDERABAD, 71800
+        </span>
+        <span class="hidden xl:inline text-slate-500">|</span>
+        <span class="hidden xl:inline text-amber-500/80">
+          GPS: 25.39689° N, 68.35685° E
         </span>
       </div>
-      <div class="flex items-center space-x-5">
-        <a href="tel:03332622963" class="text-amber-400 font-bold hover:underline flex items-center gap-1">
+      <div class="flex items-center space-x-6">
+        <a href="tel:03332622963" class="text-amber-400 font-bold hover:text-amber-300 transition flex items-center gap-1.5">
           <i class="fa-solid fa-phone"></i> 0333 2622963
         </a>
-        <a href="https://wa.me/923332622963?text=Hi%20Barkat%20Packaging,%20I%20need%20a%20quote%20for%20packaging%20boxes" target="_blank" class="text-emerald-400 font-bold hover:underline flex items-center gap-1">
-          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+        <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20factory%20quote" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-xs"></i> WhatsApp Direct
         </a>
       </div>
     </div>
-  </header>
+  </aside>
 
-  <!-- NAVBAR -->
-  <nav class="sticky top-[33px] z-40 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
+  <!-- MAIN NAVIGATION -->
+  <nav class="sticky top-[35px] z-40 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-lg shadow-amber-500/20" />
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 transition" />
         <div>
-          <div class="text-2xl font-black text-white tracking-tight">BARKAT <span class="text-amber-500">PACKAGING</span></div>
-          <div class="text-[11px] uppercase tracking-widest text-slate-400 font-medium">S.I.T.E. Hyderabad • Factory Direct</div>
+          <div class="text-2xl font-black text-white tracking-tight font-display">BARKAT <span class="text-amber-500">PACKAGING</span></div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-400 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
         </div>
       </a>
-      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
         <a href="index.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">Home</a>
         <a href="products.html" class="hover:text-amber-400 transition">Products</a>
         <a href="agro-packaging.html" class="hover:text-amber-400 transition">Agro Export</a>
-        <a href="about.html" class="hover:text-amber-400 transition">About Us</a>
-        <a href="calculator.html" class="hover:text-amber-400 transition">Quote Calculator</a>
+        <a href="about.html" class="hover:text-amber-400 transition">Factory & Lab</a>
+        <a href="calculator.html" class="hover:text-amber-400 transition">B2B Calculator</a>
         <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>
       </div>
-      <div>
-        <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition">
-          <i class="fa-solid fa-phone"></i> 0333 2622963
+      <div class="flex items-center gap-3">
+        <a href="#configurator" class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 hover:border-amber-500 text-slate-200 font-bold text-xs transition items-center gap-2">
+          <i class="fa-solid fa-cube text-amber-500"></i> 3D Customizer
+        </a>
+        <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
+          <i class="fa-solid fa-phone-volume"></i> 0333 2622963
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
-          <i class="fa-solid fa-industry"></i> Direct Mill Supply • S.I.T.E. Hyderabad
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-          Sindh's Premier <br/>
-          <span class="text-amber-400">Corrugated Box</span> <br/>
-          Manufacturer.
-        </h1>
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-          Direct-from-plant manufacturing of heavy-duty <strong>3-ply, 5-ply & 7-ply shipping cartons</strong>, custom branded retail packaging, and moisture-proof agro fruit boxes. Engineered for superior stacking strength with zero broker markup.
-        </p>
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="calculator.html" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-base flex items-center gap-2 shadow-xl transition">
-            <i class="fa-solid fa-calculator"></i> Instant Quote Calculator
-          </a>
-          <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20factory%20quote" target="_blank" class="px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base flex items-center gap-2 shadow-lg transition">
-            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Direct
-          </a>
-        </div>
-        <div class="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-400">
-          <div><strong class="text-white block text-sm">Est. 2000</strong>S.I.T.E. Hyderabad</div>
-          <div><strong class="text-white block text-sm">50,000+</strong>Daily Capacity</div>
-          <div><strong class="text-white block text-sm">100% Recyclable</strong>Virgin Kraft Paper</div>
-          <div><strong class="text-white block text-sm">Zero Markups</strong>Factory Direct Rates</div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-4">
-        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-3">Quick Factory Inquiries</h3>
-        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800/80">
-          <span class="text-amber-400 font-bold block text-sm">3-Ply & 5-Ply Master Shipping Boxes</span>
-          <span class="text-slate-400 text-xs">For FMCG, Kotri textile spinning mills, and industrial goods.</span>
-        </div>
-        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800/80">
-          <span class="text-emerald-400 font-bold block text-sm">Sindhri Mango & Fruit Export Boxes</span>
-          <span class="text-slate-400 text-xs">Cobb &lt; 28 g/m² hydrophobic liners for cold-chain reefer shipping.</span>
-        </div>
-        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800/80">
-          <span class="text-amber-400 font-bold block text-sm">Custom Printed Duplex & Die-Cut Partitions</span>
-          <span class="text-slate-400 text-xs">Full-color branding, logos, and shock-absorbing internal dividers.</span>
-        </div>
-        <div class="pt-2 text-center">
-          <a href="products.html" class="text-amber-400 font-bold text-xs hover:underline">
-            View Full Products Catalog & Technical Specs →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CORE SECTIONS GRID -->
-  <section class="py-20 bg-slate-950">
+  <!-- HERO SECTION: SWISS BRUTALIST INDUSTRIAL -->
+  <header class="relative py-20 lg:py-28 overflow-hidden border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl font-black text-white">Explore Our Packaging Solutions</h2>
-        <p class="text-slate-400 text-sm mt-2">Serving manufacturing and agriculture across Hyderabad, Kotri, Jamshoro, and Sindh.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
-              <i class="fa-solid fa-boxes-stacked"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Industrial Master Cartons</h3>
-            <p class="text-slate-400 text-sm mb-4">
-              High-bursting-strength 3-ply and 5-ply cartons engineered to withstand multi-tier pallet stacking without sidewall buckling.
-            </p>
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            MANUFACTURER • S.I.T.E. INDUSTRIAL AREA, HYDERABAD
           </div>
-          <a href="products.html" class="text-amber-400 font-bold text-xs hover:underline">See Specs & Products →</a>
+          
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight font-display tracking-tight">
+            HEAVY-DUTY <br/>
+            <span class="text-amber-400">CORRUGATED</span> <br/>
+            ENGINEERING.
+          </h1>
+          
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+            Sindh's dedicated packaging converter at <strong>Plot F 9, S.I.T.E. Hyderabad</strong>. We manufacture high-bursting 3-ply, 5-ply & 7-ply master cartons, cold-chain mango export boxes, and custom die-cut packaging. Built for severe industrial stacking with <strong>zero broker commissions and zero Karachi freight surcharge</strong>.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#configurator" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm uppercase tracking-wider flex items-center gap-2.5 shadow-xl shadow-amber-500/25 transition">
+              <i class="fa-solid fa-cube text-lg"></i> Launch 3D Box Customizer
+            </a>
+            <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20quote%20for%20packaging%20boxes" target="_blank" class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500 text-white font-bold text-sm uppercase tracking-wider flex items-center gap-2.5 transition">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Direct Plant WhatsApp
+            </a>
+          </div>
+
+          <!-- TRUST METRICS -->
+          <div class="pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6 font-mono">
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-amber-400 font-display">24+ YRS</div>
+              <div class="text-[11px] text-slate-400 uppercase">Est. May 2000</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-white font-display">50,000+</div>
+              <div class="text-[11px] text-slate-400 uppercase">Daily Capacity</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-white font-display">28 kg/cm²</div>
+              <div class="text-[11px] text-slate-400 uppercase">Max Mullen BST</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-display">100% EX-MILL</div>
+              <div class="text-[11px] text-slate-400 uppercase">Zero Broker Fee</div>
+            </div>
+          </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
-              <i class="fa-solid fa-leaf"></i>
+        <!-- HERO RIGHT: PLANT SNAPSHOT & MULLEN TEST BADGE -->
+        <div class="lg:col-span-5 relative">
+          <div class="blueprint-crosshair bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-6">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+              <div>
+                <span class="text-amber-400 font-mono text-xs font-bold uppercase">Plant Facility Verified</span>
+                <h3 class="text-lg font-bold text-white font-display">Plot F 9, S.I.T.E. Hyderabad</h3>
+              </div>
+              <div class="mullen-seal font-mono text-[9px] text-amber-400">
+                <span class="font-black text-xs text-white">ISO/TAPPI</span>
+                <span>CERTIFIED</span>
+                <span>LAB TESTED</span>
+              </div>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">Agro & Mango Export Boxes</h3>
-            <p class="text-slate-400 text-sm mb-4">
-              Ventilated cold-chain cartons for Mirpur Khas and Tando Allahyar mango growers. Treated to prevent collapse in 90% RH cold rooms.
-            </p>
+
+            <div class="rounded-2xl overflow-hidden border border-slate-800 relative h-64 group">
+              <img src="assets/images/barkat-packaging-factory-floor-production-workers-site-hyderabad.jpg" alt="Barkat Packaging Factory Floor Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center text-xs font-mono bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800">
+                <span class="text-amber-400 font-bold">Active Converting Floor</span>
+                <span class="text-slate-400">Continuous Corrugation</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-slate-400 block text-[10px] uppercase">Flute Formats</span>
+                <strong class="text-white">B, C, E, BC, 7-Ply</strong>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-slate-400 block text-[10px] uppercase">Dispatch Radius</span>
+                <strong class="text-white">Hyderabad • Kotri • Sindh</strong>
+              </div>
+            </div>
           </div>
-          <a href="agro-packaging.html" class="text-emerald-400 font-bold text-xs hover:underline">See Agro Details →</a>
         </div>
 
-        <!-- Card 3 -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
-              <i class="fa-solid fa-calculator"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Instant Box Calculator</h3>
-            <p class="text-slate-400 text-sm mb-4">
-              Input your box Length, Width, and Height to calculate volume (CFT/CBM), estimated pricing, and send specifications straight to WhatsApp.
-            </p>
-          </div>
-          <a href="calculator.html" class="text-amber-400 font-bold text-xs hover:underline">Open Quote Calculator →</a>
-        </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  
-  <!-- REAL FACTORY TOUR & INFRASTRUCTURE GALLERY -->
-  <section class="py-20 bg-slate-900/60 border-t border-slate-800">
+  <!-- ================================================================= -->
+  <!-- FEATURE 1: INTERACTIVE 3D WEBGL BOX CONFIGURATOR & CUSTOMIZER -->
+  <!-- ================================================================= -->
+  <section id="configurator" class="py-20 bg-slate-900/50 border-b border-slate-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-          <i class="fa-solid fa-camera"></i> Verified Plant Infrastructure
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-cubes"></i> Three.js WebGL Real-Time Engine
         </div>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">Inside Barkat Packaging (Plot F 9, S.I.T.E.)</h2>
-        <p class="text-slate-400 text-sm mt-2">Real photographs from our corrugated board manufacturing plant, converting machinery, and dispatch warehouse in Hyderabad, Sindh.</p>
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-display">Interactive 3D Box Customizer</h2>
+        <p class="text-slate-400 text-sm mt-2">Rotate in 360°, adjust dimensions, fold flaps, and inspect custom branding stamped live onto the carton face.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition duration-300">
-          <div class="overflow-hidden h-64">
-            <img src="assets/images/barkat-packaging-factory-floor-production-workers-site-hyderabad.jpg" alt="Barkat Packaging Factory Floor Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- 3D VIEWPORT (LEFT) -->
+        <div class="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-3xl p-5 shadow-2xl relative">
+          
+          <!-- Viewport Header Toolbar -->
+          <div class="flex flex-wrap justify-between items-center gap-3 mb-4 pb-3 border-b border-slate-800 text-xs font-mono">
+            <div class="flex items-center gap-2 text-slate-400">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>WebGL Studio Canvas • Orbit & Drag to Rotate</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" class="pill-tab" id="btn-auto-rotate" onclick="toggle3DRotate()">
+                <i class="fa-solid fa-rotate"></i> Auto-Rotate
+              </button>
+              <button type="button" class="pill-tab" onclick="reset3DView()">
+                <i class="fa-solid fa-arrows-to-eye"></i> Reset View
+              </button>
+            </div>
           </div>
-          <div class="p-5">
-            <span class="text-amber-400 text-xs font-bold uppercase">Manufacturing Floor</span>
-            <h4 class="text-base font-bold text-white mt-1">Main Plant & Corrugation Facility</h4>
-            <p class="text-slate-400 text-xs mt-1">Skilled workforce and heavy paper reel storage at Plot F 9, S.I.T.E. Hyderabad.</p>
+
+          <!-- 3D CANVAS CONTAINER -->
+          <div id="three-box-canvas" class="relative">
+            <!-- Loading Indicator -->
+            <div id="three-loading" class="absolute inset-0 flex items-center justify-center text-xs font-mono text-amber-400 bg-slate-950">
+              <i class="fa-solid fa-circle-notch fa-spin text-2xl mr-2"></i> Initializing 3D Packaging Engine...
+            </div>
+          </div>
+
+          <!-- Viewport Footer HUD -->
+          <div class="mt-4 pt-3 border-t border-slate-800 grid grid-cols-3 gap-3 text-center text-xs font-mono">
+            <div class="bg-slate-900 p-2.5 rounded-xl">
+              <span class="text-slate-400 block text-[10px]">CURRENT VOLUME</span>
+              <strong id="hud-volume" class="text-amber-400 text-sm">1.11 CFT</strong>
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded-xl">
+              <span class="text-slate-400 block text-[10px]">CBM DISPLACEMENT</span>
+              <strong id="hud-cbm" class="text-white text-sm">0.031 CBM</strong>
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded-xl">
+              <span class="text-slate-400 block text-[10px]">BLANK SHEET AREA</span>
+              <strong id="hud-sheet" class="text-white text-sm">0.82 m²</strong>
+            </div>
           </div>
         </div>
 
-        <div class="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition duration-300">
-          <div class="overflow-hidden h-64">
-            <img src="assets/images/barkat-packaging-heavy-duty-platen-die-cutting-press-machine.jpg" alt="Heavy-Duty Platen Die-Cutting Press Machine" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+        <!-- CONTROLS PANEL (RIGHT) -->
+        <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-7 shadow-2xl space-y-6">
+          
+          <div class="border-b border-slate-800 pb-3">
+            <h3 class="text-xl font-bold text-white font-display">Parametric Specifications</h3>
+            <p class="text-slate-400 text-xs mt-0.5">Manipulate dimensions and structure to preview ex-factory pricing.</p>
           </div>
-          <div class="p-5">
-            <span class="text-amber-400 text-xs font-bold uppercase">Die-Cutting & Creasing</span>
-            <h4 class="text-base font-bold text-white mt-1">Precision Platen Die-Cutter</h4>
-            <p class="text-slate-400 text-xs mt-1">High-tonnage die-cutting for self-locking cartons, fruit export boxes, and trays.</p>
+
+          <!-- 1. DIMENSION SLIDERS -->
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs font-mono mb-1.5">
+                <span class="text-slate-300 font-bold">Length (L): <strong id="val-length" class="text-amber-400">16</strong> inches</span>
+                <span class="text-slate-400">8" — 48"</span>
+              </div>
+              <input type="range" id="slider-length" min="8" max="48" step="0.5" value="16" class="w-full" oninput="syncDimensions()" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-mono mb-1.5">
+                <span class="text-slate-300 font-bold">Width (W): <strong id="val-width" class="text-amber-400">12</strong> inches</span>
+                <span class="text-slate-400">6" — 36"</span>
+              </div>
+              <input type="range" id="slider-width" min="6" max="36" step="0.5" value="12" class="w-full" oninput="syncDimensions()" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-mono mb-1.5">
+                <span class="text-slate-300 font-bold">Height (H): <strong id="val-height" class="text-amber-400">10</strong> inches</span>
+                <span class="text-slate-400">4" — 36"</span>
+              </div>
+              <input type="range" id="slider-height" min="4" max="36" step="0.5" value="10" class="w-full" oninput="syncDimensions()" />
+            </div>
           </div>
+
+          <!-- 2. FLAP FOLDING SLIDER -->
+          <div class="pt-2 border-t border-slate-800">
+            <div class="flex justify-between text-xs font-mono mb-1.5">
+              <span class="text-slate-300 font-bold"><i class="fa-solid fa-arrows-split-up-and-left text-amber-500"></i> Flap Folding Physics:</span>
+              <strong id="val-flap" class="text-amber-400">0° (Closed & Taped)</strong>
+            </div>
+            <input type="range" id="slider-flap" min="0" max="90" step="1" value="0" class="w-full" oninput="syncFlaps(this.value)" />
+            <div class="flex justify-between text-[10px] font-mono text-slate-400 mt-1">
+              <span>0° Fully Closed</span>
+              <span>45° Semi-Folded</span>
+              <span>90° Open Flat</span>
+            </div>
+          </div>
+
+          <!-- 3. MATERIAL SELECTOR -->
+          <div class="pt-2 border-t border-slate-800">
+            <label class="block text-xs font-mono text-slate-300 font-bold mb-2">Paper Grade & Fluting Structure:</label>
+            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+              <button type="button" class="pill-tab active" id="mat-kraft" onclick="changeMaterial('kraft', this)">Standard Kraft</button>
+              <button type="button" class="pill-tab" id="mat-virgin" onclick="changeMaterial('virgin', this)">Virgin Export</button>
+              <button type="button" class="pill-tab" id="mat-white" onclick="changeMaterial('white', this)">Bleached White</button>
+            </div>
+          </div>
+
+          <!-- 4. LIVE BRAND STAMPING -->
+          <div class="pt-2 border-t border-slate-800">
+            <label class="block text-xs font-mono text-slate-300 font-bold mb-1.5">Live Brand Name Stamp Preview:</label>
+            <input type="text" id="input-brand-text" value="BARKAT PACKAGING" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2 text-xs font-mono text-amber-400 font-bold focus:outline-none focus:border-amber-500" oninput="syncBrandText(this.value)" placeholder="Enter your business name..." />
+          </div>
+
+          <!-- 5. INSTANT FACTORY QUOTE CALCULATION -->
+          <div class="bg-slate-950 border border-amber-500/30 rounded-2xl p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-[10px] font-mono text-slate-400 uppercase">Estimated Ex-Factory Rate</span>
+                <div class="text-2xl font-black text-amber-400 font-display" id="hud-price">PKR 85 – 105</div>
+              </div>
+              <div class="text-right text-[11px] font-mono text-slate-400">
+                <div>Min Order: <strong class="text-white">500 pcs</strong></div>
+                <div>Dispatch: <strong class="text-emerald-400">24–48 Hours</strong></div>
+              </div>
+            </div>
+
+            <button type="button" onclick="send3DConfigWhatsApp()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition">
+              <i class="fa-brands fa-whatsapp text-lg"></i> Send 3D Specs to Plant WhatsApp
+            </button>
+          </div>
+
         </div>
 
-        <div class="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition duration-300">
-          <div class="overflow-hidden h-64">
-            <img src="assets/images/barkat-packaging-kraft-paper-rolls-corrugator-reel-stand-sindh.jpg" alt="Kraft Paper Rolls Reel Stand" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="p-5">
-            <span class="text-amber-400 text-xs font-bold uppercase">Raw Materials</span>
-            <h4 class="text-base font-bold text-white mt-1">High-GSM Virgin Kraft Paper Reels</h4>
-            <p class="text-slate-400 text-xs mt-1">Staged paper reels feeding our continuous corrugator line for high-bursting strength.</p>
-          </div>
-        </div>
-
-        <div class="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition duration-300">
-          <div class="overflow-hidden h-64">
-            <img src="assets/images/barkat-packaging-corrugated-box-heavy-wire-stitching-hyderabad.jpg" alt="Heavy-Duty Wire Stitching on 5-Ply Cartons" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="p-5">
-            <span class="text-amber-400 text-xs font-bold uppercase">Joint Reinforcement</span>
-            <h4 class="text-base font-bold text-white mt-1">Galvanized Steel Wire Stitching</h4>
-            <p class="text-slate-400 text-xs mt-1">High-durability corner stitching for heavy-duty 5-ply industrial master cartons.</p>
-          </div>
-        </div>
-
-        <div class="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition duration-300">
-          <div class="overflow-hidden h-64">
-            <img src="assets/images/barkat-packaging-master-carton-stacking-warehouse-dispatch.jpg" alt="Finished Master Cartons Bundled for Dispatch" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="p-5">
-            <span class="text-amber-400 text-xs font-bold uppercase">Dispatch Logistics</span>
-            <h4 class="text-base font-bold text-white mt-1">Bundled Cartons Ready for Dispatch</h4>
-            <p class="text-slate-400 text-xs mt-1">Daily shipments serving Kotri textile mills, Hyderabad FMCG, and Sindh agriculture.</p>
-          </div>
-        </div>
-
-        <div class="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition duration-300">
-          <div class="overflow-hidden h-64">
-            <img src="assets/images/barkat-packaging-factory-main-gate-site-area-hyderabad.jpg" alt="Barkat Packaging Main Factory Gate SITE Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="p-5">
-            <span class="text-amber-400 text-xs font-bold uppercase">Logistics Access</span>
-            <h4 class="text-base font-bold text-white mt-1">Factory Main Gate & Loading Bay</h4>
-            <p class="text-slate-400 text-xs mt-1">Spacious logistics access accommodating 20ft and 40ft commercial transport trucks.</p>
-          </div>
-        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- LOCATION & MAP -->
-  <section class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-      <div class="space-y-4">
-        <h2 class="text-3xl font-black text-white">Visit Our Manufacturing Plant</h2>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Conveniently located at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, we welcome factory visits, sample inspections, and bulk order discussions.
-        </p>
-        <div class="space-y-2 text-xs text-slate-300 bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono">
-          <div><strong class="text-amber-400">Address:</strong> Plot F 9, S.I.T.E. Area, Hyderabad, Sindh 71800</div>
-          <div><strong class="text-amber-400">Phone:</strong> 0333 2622963</div>
-          <div><strong class="text-amber-400">Email:</strong> jibranpccc@gmail.com</div>
-          <div><strong class="text-amber-400">Google CID:</strong> 305341297154128408</div>
+  <!-- ================================================================= -->
+  <!-- FEATURE 2: INTERACTIVE FLUTE & COMPRESSION STRENGTH SIMULATOR -->
+  <!-- ================================================================= -->
+  <section class="py-20 bg-slate-950 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-gauge-high"></i> In-House QC Laboratory Simulation
         </div>
-        <div class="pt-2">
-          <a href="https://maps.google.com/?cid=305341297154128408" target="_blank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 transition">
-            <i class="fa-solid fa-map-location-dot"></i> Open Verified Google Maps Pin
-          </a>
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-display">Flute & Compression Strength Physics</h2>
+        <p class="text-slate-400 text-sm mt-2">Test how different flute profiles react under real stacking pressure. Calibrated to ISO 3037 and TAPPI standards.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- FLUTE SELECTOR & CANVAS (LEFT) -->
+        <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
+          
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <span class="text-xs font-mono text-slate-400 uppercase font-bold">Select Corrugation Profile:</span>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <button type="button" class="pill-tab" onclick="switchFluteSim('b-flute', this)">B-Flute</button>
+              <button type="button" class="pill-tab" onclick="switchFluteSim('c-flute', this)">C-Flute</button>
+              <button type="button" class="pill-tab" onclick="switchFluteSim('e-flute', this)">E-Flute</button>
+              <button type="button" class="pill-tab active" onclick="switchFluteSim('bc-flute', this)">BC Double Wall</button>
+            </div>
+          </div>
+
+          <!-- Cross-Section Canvas -->
+          <div class="bg-slate-950 rounded-2xl p-3 border border-slate-800">
+            <canvas id="flute-canvas" class="w-full rounded-xl"></canvas>
+          </div>
+
+          <!-- Stacking Load Slider -->
+          <div class="space-y-2 pt-2">
+            <div class="flex justify-between text-xs font-mono">
+              <span class="text-slate-300 font-bold">Applied Stacking Load: <strong id="val-load-kg" class="text-amber-400">120 kg</strong></span>
+              <span class="text-slate-400">0 kg — 600 kg</span>
+            </div>
+            <input type="range" id="slider-flute-load" min="0" max="600" step="10" value="120" class="w-full" oninput="syncFluteLoad(this.value)" />
+          </div>
+
+          <div id="flute-safety-status" class="p-3 bg-slate-950 rounded-xl text-xs font-mono border border-slate-800">
+            <!-- Dynamic safety indicator -->
+          </div>
+
         </div>
+
+        <!-- TECHNICAL METRICS CARDS (RIGHT) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
+            <span class="text-amber-400 font-mono text-xs font-bold uppercase">Active Flute Profile</span>
+            <h3 id="stat-flute-name" class="text-xl font-bold text-white font-display">BC-Flute (Heavy 5-Ply Double Wall)</h3>
+            <p id="stat-flute-desc" class="text-slate-400 text-xs leading-relaxed">
+              Double-wall powerhouse combining B-flute puncture resistance with C-flute column stacking. Replaces wooden crates for export shipments.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 text-xs font-mono">
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-400 block text-[10px] uppercase">Flute Height</span>
+              <strong id="stat-flute-height" class="text-amber-400 text-base">7.0 mm</strong>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-400 block text-[10px] uppercase">Flute Density</span>
+              <strong id="stat-flute-density" class="text-white text-base">87 flutes/ft</strong>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-400 block text-[10px] uppercase">Edge Crush (ECT)</span>
+              <strong id="stat-flute-ect" class="text-emerald-400 text-base">55 lb/in (9.6 kN/m)</strong>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+              <span class="text-slate-400 block text-[10px] uppercase">Mullen Burst (BST)</span>
+              <strong id="stat-flute-bst" class="text-amber-400 text-base">22 kg/cm² (~312 PSI)</strong>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/60 border border-slate-800 rounded-xl text-xs text-slate-300">
+            <strong class="text-white block mb-1">In-Plant Quality Lab Guarantee:</strong>
+            Every lot manufactured at our S.I.T.E. Hyderabad plant is digitally burst-tested before loading onto delivery trucks.
+          </div>
+
+        </div>
+
       </div>
-      <div class="bg-slate-950 border border-slate-800 p-3 rounded-2xl overflow-hidden shadow-2xl">
-        <iframe 
-          title="Barkat Packaging Google Maps Location"
-          src="https://maps.google.com/maps?q=25.39689,68.35685&hl=en&z=15&output=embed"
-          width="100%" 
-          height="320" 
-          style="border:0; border-radius: 12px;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
+
     </div>
   </section>
+
+  <!-- ================================================================= -->
+  <!-- FEATURE 3: INTERACTIVE PALLET LOADING & CONTAINER OPTIMIZER -->
+  <!-- ================================================================= -->
+  <section class="py-20 bg-slate-900/40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-pallet"></i> Commercial Cargo Logistics
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-display">Pallet & Container Load Optimizer</h2>
+        <p class="text-slate-400 text-sm mt-2">See exactly how your custom cartons stack onto industrial pallets and calculate container freight efficiency.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- PALLET CANVAS (LEFT) -->
+        <div class="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
+          
+          <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-800 pb-3">
+            <span class="text-xs font-mono text-slate-400 font-bold">Top-Down Pallet Layer Layout:</span>
+            <div class="flex gap-2 text-xs font-mono">
+              <button type="button" class="pill-tab active" onclick="switchPalletType('gma', this)">Standard 48"×40"</button>
+              <button type="button" class="pill-tab" onclick="switchPalletType('euro', this)">Euro 1200×800</button>
+              <button type="button" class="pill-tab" onclick="switchPalletType('square', this)">Square 48"×48"</button>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 rounded-2xl p-3 border border-slate-800">
+            <canvas id="pallet-canvas" class="w-full rounded-xl"></canvas>
+          </div>
+
+          <div class="flex justify-between items-center text-xs font-mono text-slate-400 pt-1">
+            <span>Box: <strong class="text-amber-400" id="pal-box-dims">16" × 12" × 10"</strong></span>
+            <span>Surface Efficiency: <strong class="text-emerald-400" id="stat-pal-eff">90%</strong></span>
+          </div>
+
+        </div>
+
+        <!-- PALLET LOGISTICS DATA (RIGHT) -->
+        <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
+          
+          <h3 class="text-xl font-bold text-white font-display border-b border-slate-800 pb-3">Container Dispatch Metrics</h3>
+
+          <div class="space-y-3 font-mono text-xs">
+            <div class="flex justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400">Boxes Per Pallet Layer:</span>
+              <strong id="stat-pal-layer" class="text-amber-400 text-sm">8 boxes</strong>
+            </div>
+
+            <div class="flex justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400">Stacking Tiers (to 72" H):</span>
+              <strong id="stat-pal-tiers" class="text-white text-sm">7 tiers</strong>
+            </div>
+
+            <div class="flex justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400">Total Boxes Per Pallet:</span>
+              <strong id="stat-pal-total" class="text-emerald-400 text-sm">56 boxes</strong>
+            </div>
+
+            <div class="flex justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400">20ft Container Payload:</span>
+              <strong id="stat-pal-c20" class="text-white text-sm">560 boxes (10 pallets)</strong>
+            </div>
+
+            <div class="flex justify-between p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400">40ft HC Reefer/Cargo:</span>
+              <strong id="stat-pal-c40" class="text-amber-400 text-sm">1,176 boxes (21 pallets)</strong>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="calculator.html" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-calculator text-amber-400"></i> Open Detailed B2B Freight Calculator
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- FEATURE 4: VERIFIED PLANT PROOF GALLERY (15 REAL GEOTAGGED PHOTOS) -->
+  <!-- ================================================================= -->
+  <section class="py-20 bg-slate-950 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-camera"></i> Authentic Manufacturing Proof
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-display">Inside Our Hyderabad Converting Plant</h2>
+        <p class="text-slate-400 text-sm mt-2">Real photography of our corrugation lines, platen die-cutting presses, wire-stitching machinery, and Kraft reel inventory at Plot F 9, S.I.T.E. Hyderabad.</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs font-mono">
+        <button type="button" class="pill-tab active" onclick="filterGallery('all', this)">All 15 Photos</button>
+        <button type="button" class="pill-tab" onclick="filterGallery('machinery', this)">Converting Machinery</button>
+        <button type="button" class="pill-tab" onclick="filterGallery('raw', this)">Kraft Paper Stock</button>
+        <button type="button" class="pill-tab" onclick="filterGallery('floor', this)">Plant Floor & Team</button>
+        <button type="button" class="pill-tab" onclick="filterGallery('products', this)">Finished Cartons</button>
+      </div>
+
+      <!-- 15 Photo Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+        
+        <!-- Photo 01 -->
+        <div class="gallery-item group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition cursor-pointer" data-cat="machinery" onclick="openLightbox('assets/images/barkat-packaging-heavy-duty-box-wire-stitching-hyderabad.jpg', 'Industrial Box Wire Stitching', 'Heavy galvanized steel wire stitching fastening 5-ply corrugated master cartons at Plot F 9, S.I.T.E. Hyderabad.')">
+          <div class="h-60 overflow-hidden relative">
+            <img src="assets/images/barkat-packaging-heavy-duty-box-wire-stitching-hyderabad.jpg" alt="Box Wire Stitching Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono bg-slate-950/80 px-2 py-0.5 rounded text-amber-400">GPS: 25.39689° N</span>
+          </div>
+          <div class="p-4">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Fastening Machinery</span>
+            <h4 class="text-sm font-bold text-white mt-0.5">Heavy-Duty Box Wire Stitching</h4>
+          </div>
+        </div>
+
+        <!-- Photo 02 -->
+        <div class="gallery-item group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition cursor-pointer" data-cat="raw" onclick="openLightbox('assets/images/barkat-packaging-kraft-paper-rolls-corrugator-reel-stand.jpg', 'Virgin Kraft Paper Reels', 'High-GSM Kraft paper reels staged on corrugator reel stand ready for continuous board production.')">
+          <div class="h-60 overflow-hidden relative">
+            <img src="assets/images/barkat-packaging-kraft-paper-rolls-corrugator-reel-stand.jpg" alt="Kraft Paper Reels Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono bg-slate-950/80 px-2 py-0.5 rounded text-amber-400">GPS: 25.39689° N</span>
+          </div>
+          <div class="p-4">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Raw Materials</span>
+            <h4 class="text-sm font-bold text-white mt-0.5">High-GSM Virgin Kraft Reels</h4>
+          </div>
+        </div>
+
+        <!-- Photo 03 -->
+        <div class="gallery-item group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition cursor-pointer" data-cat="floor" onclick="openLightbox('assets/images/barkat-packaging-main-factory-floor-workers-site-hyderabad.jpg', 'Main Plant Floor & Converting Facility', 'Panoramic view of corrugation line, skilled packaging workforce, and paper storage at Plot F 9, S.I.T.E. Hyderabad.')">
+          <div class="h-60 overflow-hidden relative">
+            <img src="assets/images/barkat-packaging-main-factory-floor-workers-site-hyderabad.jpg" alt="Barkat Packaging Factory Floor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono bg-slate-950/80 px-2 py-0.5 rounded text-amber-400">GPS: 25.39689° N</span>
+          </div>
+          <div class="p-4">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Plant Operations</span>
+            <h4 class="text-sm font-bold text-white mt-0.5">Main Converting Floor & Team</h4>
+          </div>
+        </div>
+
+        <!-- Photo 04 -->
+        <div class="gallery-item group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition cursor-pointer" data-cat="products" onclick="openLightbox('assets/images/barkat-packaging-master-shipping-carton-stacking-dispatch.jpg', '5-Ply Shipping Master Cartons', 'Strapped bundles of 5-ply double-wall cartons ready for commercial truck loading and dispatch.')">
+          <div class="h-60 overflow-hidden relative">
+            <img src="assets/images/barkat-packaging-master-shipping-carton-stacking-dispatch.jpg" alt="Master Cartons Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono bg-slate-950/80 px-2 py-0.5 rounded text-amber-400">GPS: 25.39689° N</span>
+          </div>
+          <div class="p-4">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Finished Cartons</span>
+            <h4 class="text-sm font-bold text-white mt-0.5">5-Ply Master Shipping Cartons</h4>
+          </div>
+        </div>
+
+        <!-- Photo 05 -->
+        <div class="gallery-item group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition cursor-pointer" data-cat="machinery" onclick="openLightbox('assets/images/barkat-packaging-corrugated-sheet-converting-machinery.jpg', 'Board Converting & Creasing Machinery', 'High-speed rotary creasing and sheet converting line ensuring clean score lines and rapid setup.')">
+          <div class="h-60 overflow-hidden relative">
+            <img src="assets/images/barkat-packaging-corrugated-sheet-converting-machinery.jpg" alt="Converting Machinery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono bg-slate-950/80 px-2 py-0.5 rounded text-amber-400">GPS: 25.39689° N</span>
+          </div>
+          <div class="p-4">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Converting Machinery</span>
+            <h4 class="text-sm font-bold text-white mt-0.5">Sheet Converting & Creasing</h4>
+          </div>
+        </div>
+
+        <!-- Photo 06 -->
+        <div class="gallery-item group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500/50 transition cursor-pointer" data-cat="machinery" onclick="openLightbox('assets/images/barkat-packaging-heavy-duty-platen-die-cutting-press.jpg', 'Precision Platen Die-Cutting Press', 'Industrial platen die-cutter with wooden die blocks mounted for fruit cartons and self-locking mailers.')">
+          <div class="h-60 overflow-hidden relative">
+            <img src="assets/images/barkat-packaging-heavy-duty-platen-die-cutting-press.jpg" alt="Platen Die Cutter" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono bg-slate-950/80 px-2 py-0.5 rounded text-amber-400">GPS: 25.39689° N</span>
+          </div>
+          <div class="p-4">
+            <span class="text-amber-400 text-[10px] font-mono uppercase font-bold">Die-Cutting</span>
+            <h4 class="text-sm font-bold text-white mt-0.5">Heavy Platen Die-Cutting Press</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="about.html" class="text-amber-400 hover:text-amber-300 font-mono text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+          <span>View All 15 Certified Factory Photos & Infrastructure Details</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- FEATURE 5: S.I.T.E. HYDERABAD LOGISTICS & DIRECT RFQ FORM -->
+  <!-- ================================================================= -->
+  <section class="py-20 bg-slate-900/60 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- DIRECT RFQ INQUIRY FORM (LEFT) -->
+        <div class="lg:col-span-6 bg-slate-950 border border-slate-800 rounded-3xl p-7 shadow-2xl space-y-5">
+          <div class="border-b border-slate-800 pb-3">
+            <span class="text-amber-400 font-mono text-xs font-bold uppercase">Direct Factory Supply</span>
+            <h3 class="text-2xl font-bold text-white font-display">Request Wholesale Quotation</h3>
+            <p class="text-slate-400 text-xs mt-1">Get ex-factory rates direct from our plant management team within 2 hours.</p>
+          </div>
+
+          <form id="home-rfq-form" onsubmit="submitHomeRFQ(event)" class="space-y-4 text-xs font-mono">
+            <div>
+              <label class="block text-slate-300 font-bold mb-1">Company / Buyer Name:</label>
+              <input type="text" id="rfq-name" required placeholder="e.g. Sindh Textile Mills Ltd." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-amber-500" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-slate-300 font-bold mb-1">Phone / WhatsApp:</label>
+                <input type="tel" id="rfq-phone" required placeholder="0333..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-amber-500" />
+              </div>
+              <div>
+                <label class="block text-slate-300 font-bold mb-1">Required Quantity:</label>
+                <input type="number" id="rfq-qty" value="2500" min="300" step="100" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-amber-500" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2">
+              <div>
+                <label class="block text-slate-400 text-[10px] mb-1">Length (in):</label>
+                <input type="number" id="rfq-len" value="16" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white text-center" />
+              </div>
+              <div>
+                <label class="block text-slate-400 text-[10px] mb-1">Width (in):</label>
+                <input type="number" id="rfq-wid" value="12" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white text-center" />
+              </div>
+              <div>
+                <label class="block text-slate-400 text-[10px] mb-1">Height (in):</label>
+                <input type="number" id="rfq-hei" value="10" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white text-center" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-slate-300 font-bold mb-1">Carton Application / Notes:</label>
+              <textarea id="rfq-notes" rows="2" placeholder="e.g. Yarn cones, mango exports, edible oil, heavy machine parts..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-amber-500"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-amber-500/20 transition">
+              <i class="fa-brands fa-whatsapp text-base"></i> Send RFQ Directly to Plant Manager
+            </button>
+          </form>
+        </div>
+
+        <!-- GOOGLE MAPS & SITE HYDERABAD LOGISTICS (RIGHT) -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <span class="text-amber-400 font-mono text-xs font-bold uppercase">Strategic Sindh Location</span>
+            <h3 class="text-3xl font-black text-white font-display">Plot F 9, S.I.T.E. Hyderabad</h3>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Located in the heart of Sindh’s primary manufacturing corridor. 5 minutes from the Indus Highway and Hyderabad Bypass, providing seamless access for 20ft and 40ft container freight trailers.
+            </p>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 p-2.5 rounded-2xl overflow-hidden shadow-2xl">
+            <iframe 
+              title="Barkat Packaging Factory Location"
+              src="https://maps.google.com/maps?q=25.39689,68.35685&hl=en&z=15&output=embed"
+              width="100%" 
+              height="280" 
+              style="border:0; border-radius: 12px;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">VERIFIED GOOGLE CID</span>
+              <strong class="text-amber-400">305341297154128408</strong>
+            </div>
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">LOGISTICS ACCESS</span>
+              <strong class="text-emerald-400">20ft / 40ft Trailers</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL FOR REAL FACTORY PHOTOS -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
+      <button type="button" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/80 text-white hover:text-amber-400 flex items-center justify-center text-lg border border-slate-700" onclick="closeLightbox()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="h-[460px] bg-slate-950 flex items-center justify-center overflow-hidden">
+        <img id="lightbox-img" src="" alt="Enlarged Factory Photo" class="max-h-full max-w-full object-contain" />
+      </div>
+      <div class="p-6 bg-slate-900 border-t border-slate-800">
+        <h4 id="lightbox-title" class="text-lg font-bold text-white font-display">Photo Title</h4>
+        <p id="lightbox-desc" class="text-slate-400 text-xs mt-1 font-mono">Photo description goes here.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 space-y-2">
-      <p class="text-slate-400 font-bold">Barkat Packaging — Corrugated Box & Packaging Manufacturer</p>
-      <p>Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963</p>
-      <p>© 2026 Barkat Packaging. All rights reserved.</p>
+  <footer class="bg-slate-950 border-t border-slate-800 py-12 text-xs font-mono text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-800/80 pb-6">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-10 h-10 rounded-lg object-cover" />
+          <span class="text-white font-bold font-display text-base tracking-tight">BARKAT PACKAGING</span>
+        </div>
+        <div class="text-slate-400">
+          Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-between items-center gap-2 text-slate-400">
+        <p>© 2026 Barkat Packaging. All rights reserved. Registered B2B Corrugated Manufacturer.</p>
+        <p class="text-amber-500">Engineered with Three.js WebGL & Pure Precision Packaging.</p>
+      </div>
     </div>
   </footer>
 
+  <!-- INTERACTIVE CLIENT SCRIPTS -->
+  <script src="assets/js/three-box.js"></script>
+  <script src="assets/js/flute-simulator.js"></script>
+  <script src="assets/js/pallet-engine.js"></script>
+
+  <script>
+    // 1. Initialize 3D Visualizer
+    var boxVis = null;
+    var fluteSim = null;
+    var palletEng = null;
+
+    window.addEventListener('load', function() {
+      // Init Three.js Box
+      try {
+        boxVis = new BoxVisualizer('three-box-canvas', {
+          length: 16,
+          width: 12,
+          height: 10,
+          flapAngle: 0,
+          materialType: 'kraft',
+          brandText: 'BARKAT PACKAGING',
+          subtext: '5-PLY MASTER CARTON • SITE HYDERABAD'
+        });
+        var loadEl = document.getElementById('three-loading');
+        if (loadEl) { loadEl.style.display = 'none'; }
+      } catch(e) {
+        console.error('Three.js init error:', e);
+      }
+
+      // Init Flute Simulator
+      try {
+        fluteSim = new FluteSimulator('flute-canvas', {
+          nameEl: document.getElementById('stat-flute-name'),
+          heightEl: document.getElementById('stat-flute-height'),
+          flutesEl: document.getElementById('stat-flute-density'),
+          ectEl: document.getElementById('stat-flute-ect'),
+          bstEl: document.getElementById('stat-flute-bst'),
+          descEl: document.getElementById('stat-flute-desc'),
+          statusEl: document.getElementById('flute-safety-status')
+        });
+      } catch(e) {
+        console.error('Flute simulator error:', e);
+      }
+
+      // Init Pallet Engine
+      try {
+        palletEng = new PalletEngine('pallet-canvas', {
+          perLayerEl: document.getElementById('stat-pal-layer'),
+          tiersEl: document.getElementById('stat-pal-tiers'),
+          totalEl: document.getElementById('stat-pal-total'),
+          effEl: document.getElementById('stat-pal-eff'),
+          c20El: document.getElementById('stat-pal-c20'),
+          c40El: document.getElementById('stat-pal-c40')
+        });
+      } catch(e) {
+        console.error('Pallet engine error:', e);
+      }
+
+      recalculateMetrics();
+    });
+
+    // Sync Dimensions from Sliders to 3D & Calculators
+    function syncDimensions() {
+      var l = document.getElementById('slider-length').value;
+      var w = document.getElementById('slider-width').value;
+      var h = document.getElementById('slider-height').value;
+
+      document.getElementById('val-length').innerText = l;
+      document.getElementById('val-width').innerText = w;
+      document.getElementById('val-height').innerText = h;
+
+      if (boxVis) boxVis.updateDimensions(l, w, h);
+      if (palletEng) palletEng.setBox(l, w, h);
+
+      document.getElementById('pal-box-dims').innerText = l + '" × ' + w + '" × ' + h + '"';
+      document.getElementById('rfq-len').value = l;
+      document.getElementById('rfq-wid').value = w;
+      document.getElementById('rfq-hei').value = h;
+
+      recalculateMetrics();
+    }
+
+    function syncFlaps(val) {
+      document.getElementById('val-flap').innerText = val + '° ' + (val == 0 ? '(Closed & Taped)' : val == 90 ? '(Open Flat)' : '(Semi-Folded)');
+      if (boxVis) boxVis.updateFlapAngle(val);
+    }
+
+    function changeMaterial(type, btn) {
+      document.querySelectorAll('#mat-kraft, #mat-virgin, #mat-white').forEach(function(el) { el.classList.remove('active'); });
+      btn.classList.add('active');
+      if (boxVis) boxVis.setMaterialType(type);
+      recalculateMetrics();
+    }
+
+    function syncBrandText(txt) {
+      if (boxVis) boxVis.setBrandText(txt);
+    }
+
+    function toggle3DRotate() {
+      if (boxVis) {
+        var isAuto = boxVis.toggleAutoRotate();
+        document.getElementById('btn-auto-rotate').classList.toggle('active', isAuto);
+      }
+    }
+
+    function reset3DView() {
+      if (boxVis) boxVis.resetCamera();
+    }
+
+    function switchFluteSim(type, btn) {
+      btn.parentElement.querySelectorAll('.pill-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      if (fluteSim) fluteSim.setFlute(type);
+    }
+
+    function syncFluteLoad(kg) {
+      document.getElementById('val-load-kg').innerText = kg + ' kg';
+      if (fluteSim) fluteSim.setLoad(kg);
+    }
+
+    function switchPalletType(type, btn) {
+      btn.parentElement.querySelectorAll('.pill-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      if (palletEng) palletEng.setPalletType(type);
+    }
+
+    function recalculateMetrics() {
+      var l = parseFloat(document.getElementById('slider-length').value) || 16;
+      var w = parseFloat(document.getElementById('slider-width').value) || 12;
+      var h = parseFloat(document.getElementById('slider-height').value) || 10;
+
+      var cft = (l * w * h) / 1728;
+      var cbm = cft * 0.0283;
+      var sheetArea = (((2 * (l + w)) + 1.5) * (h + w + 0.5)) / 1550;
+
+      document.getElementById('hud-volume').innerText = cft.toFixed(2) + ' CFT';
+      document.getElementById('hud-cbm').innerText = cbm.toFixed(3) + ' CBM';
+      document.getElementById('hud-sheet').innerText = sheetArea.toFixed(2) + ' m²';
+
+      var baseRate = sheetArea * 145; // 5-ply base
+      var low = Math.round(baseRate * 0.95);
+      var high = Math.round(baseRate * 1.15);
+      document.getElementById('hud-price').innerText = 'PKR ' + low + ' – ' + high;
+    }
+
+    function send3DConfigWhatsApp() {
+      var l = document.getElementById('slider-length').value;
+      var w = document.getElementById('slider-width').value;
+      var h = document.getElementById('slider-height').value;
+      var brand = document.getElementById('input-brand-text').value;
+
+      var msg = '*📦 3D CUSTOM BOX CONFIGURATION — BARKAT PACKAGING*\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '📏 *Dimensions:* ' + l + '" L × ' + w + '" W × ' + h + '" H\n' +
+        '🏷️ *Brand Stamp:* ' + brand + '\n' +
+        '🏭 *Factory:* Plot F 9, S.I.T.E. Hyderabad\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        'Please confirm volume availability and formal quotation.';
+      window.open('https://wa.me/923332622963?text=' + encodeURIComponent(msg), '_blank');
+    }
+
+    function submitHomeRFQ(e) {
+      e.preventDefault();
+      var name = document.getElementById('rfq-name').value;
+      var phone = document.getElementById('rfq-phone').value;
+      var qty = document.getElementById('rfq-qty').value;
+      var l = document.getElementById('rfq-len').value;
+      var w = document.getElementById('rfq-wid').value;
+      var h = document.getElementById('rfq-hei').value;
+      var notes = document.getElementById('rfq-notes').value;
+
+      var msg = '*📋 NEW WHOLESALE RFQ — BARKAT PACKAGING*\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '👤 *Buyer/Company:* ' + name + '\n' +
+        '📞 *Phone:* ' + phone + '\n' +
+        '🔢 *Quantity:* ' + qty + ' pcs\n' +
+        '📏 *Dimensions:* ' + l + '" × ' + w + '" × ' + h + '"\n' +
+        '📝 *Notes:* ' + (notes || 'Standard manufacturing') + '\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        'Please send official quotation and production lead time.';
+      window.open('https://wa.me/923332622963?text=' + encodeURIComponent(msg), '_blank');
+    }
+
+    // Gallery Filter & Lightbox
+    function filterGallery(cat, btn) {
+      btn.parentElement.querySelectorAll('.pill-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      document.querySelectorAll('.gallery-item').forEach(function(item) {
+        if (cat === 'all' || item.getAttribute('data-cat') === cat) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(src, title, desc) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-title').innerText = title;
+      document.getElementById('lightbox-desc').innerText = desc;
+      document.getElementById('lightbox-modal').classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      document.getElementById('lightbox-modal').classList.remove('active');
+    }
+  </script>
 </body>
 </html>

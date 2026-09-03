@@ -1,369 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B2B Corrugated Box Quote Calculator | Barkat Packaging Hyderabad</title>
-  <meta name="description" content="Calculate custom corrugated box prices, volume (CFT/CBM), and pallet loading instantly. Factory-direct wholesale cartons from Barkat Packaging, S.I.T.E. Hyderabad." />
-  <meta name="robots" content="index, follow" />
+  <title>B2B Corrugated Box Quote & Spec Calculator | Barkat Packaging Hyderabad</title>
+  <meta name="description" content="Calculate real-time B2B corrugated box dimensions, board GSM, Mullen bursting strength, pallet stacking efficiency, and ex-factory pricing from Barkat Packaging, S.I.T.E. Hyderabad. Direct WhatsApp RFQ compiler." />
 
-  <style>
-    :root {
-      --bg-dark: #020617;
-      --card-bg: #0f172a;
-      --card-border: #1e293b;
-      --amber-500: #f59e0b;
-      --amber-400: #fbbf24;
-      --amber-600: #d97706;
-      --emerald-500: #10b981;
-      --emerald-600: #059669;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-sub: #cbd5e1;
-      --input-bg: #030712;
-      --input-border: #334155;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-sans); line-height: 1.5; padding-bottom: 60px; }
+  <!-- Google Fonts & Industrial CSS -->
+  <link rel="stylesheet" href="assets/css/industrial-theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    .topbar { background: #090d16; border-bottom: 1px solid var(--card-border); font-size: 0.78rem; padding: 8px 16px; color: var(--text-muted); }
-    .topbar-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-    .topbar a { color: var(--amber-400); text-decoration: none; font-weight: 600; }
-
-    header.main-header { background: rgba(2, 6, 23, 0.95); border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); }
-    .header-content { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
-    .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-icon { width: 44px; height: 44px; background: linear-gradient(135deg, #f59e0b, #b45309); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-    .brand-icon svg { width: 24px; height: 24px; fill: #020617; }
-    .brand-title { font-size: 1.35rem; font-weight: 900; color: #ffffff; line-height: 1.1; }
-    .brand-title span { color: var(--amber-500); }
-    .brand-sub { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); }
-    .header-nav { display: flex; align-items: center; gap: 16px; }
-    .nav-link { color: var(--text-sub); text-decoration: none; font-size: 0.88rem; font-weight: 500; }
-    .nav-link:hover { color: var(--amber-400); }
-    .btn-call { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); color: var(--amber-400); padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-decoration: none; }
-
-    .hero { background: linear-gradient(180deg, #0f172a 0%, #020617 100%); border-bottom: 1px solid var(--card-border); padding: 36px 20px 30px; text-align: center; }
-    .hero h1 { font-size: 2.2rem; font-weight: 900; color: #ffffff; margin-bottom: 8px; }
-    .hero h1 span { color: var(--amber-400); }
-    .hero p { color: var(--text-muted); font-size: 0.95rem; max-width: 680px; margin: 0 auto; }
-
-    .calc-wrapper { max-width: 1200px; margin: 32px auto 0; padding: 0 16px; }
-    .calc-grid { display: grid; grid-template-columns: 1fr 420px; gap: 28px; }
-    @media (max-width: 980px) { .calc-grid { grid-template-columns: 1fr; } }
-
-    .calc-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; margin-bottom: 24px; }
-    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--card-border); }
-    .card-title { font-size: 1.1rem; font-weight: 800; color: #ffffff; }
-
-    .unit-toggle-group { display: inline-flex; background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 8px; padding: 3px; }
-    .unit-btn { background: transparent; border: none; color: var(--text-muted); padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
-    .unit-btn.active { background: var(--amber-500); color: #020617; }
-
-    .dim-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    @media (max-width: 600px) { .dim-grid { grid-template-columns: 1fr; } }
-    .dim-box { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 10px; padding: 12px; }
-    .dim-box-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
-    .dim-input-wrap { display: flex; align-items: center; gap: 6px; }
-    .dim-input { width: 100%; background: transparent; border: none; color: #ffffff; font-size: 1.2rem; font-weight: 800; outline: none; }
-    .dim-unit-tag { font-size: 0.85rem; font-weight: 700; color: var(--amber-400); }
-
-    .box-schematic { background: #060b16; border: 1px dashed #334155; border-radius: 10px; padding: 14px; margin-top: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
-    .box-schematic strong { color: var(--amber-400); font-size: 1rem; }
-
-    .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    @media (max-width: 768px) { .options-grid { grid-template-columns: 1fr; } }
-    .option-card { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.2s; }
-    .option-card:hover { border-color: var(--amber-500); }
-    .option-card.selected { border-color: var(--amber-500); background: rgba(245, 158, 11, 0.08); }
-    .option-title { font-size: 0.9rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
-    .option-desc { font-size: 0.72rem; color: var(--text-muted); }
-
-    .qty-presets { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
-    .qty-pill { background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text-sub); padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
-    .qty-pill.active { background: var(--amber-500); color: #020617; border-color: var(--amber-500); }
-    .qty-slider-wrap { display: flex; align-items: center; gap: 14px; }
-    .qty-slider { flex: 1; accent-color: var(--amber-500); cursor: pointer; }
-    .qty-input-box { width: 110px; background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 6px; padding: 8px; color: #ffffff; font-size: 1rem; font-weight: 800; text-align: right; }
-
-    .summary-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px; position: sticky; top: 96px; }
-    .price-bracket-box { background: #131c31; border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 12px; padding: 18px; text-align: center; margin-bottom: 18px; }
-    .price-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--amber-400); margin-bottom: 4px; }
-    .price-amount { font-size: 2rem; font-weight: 900; color: #ffffff; }
-    .price-unit { font-size: 0.8rem; color: var(--text-muted); }
-
-    .spec-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.8rem; }
-    .spec-name { color: var(--text-muted); }
-    .spec-val { font-weight: 700; color: #ffffff; }
-
-    .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #059669; color: #ffffff; border: none; padding: 14px; border-radius: 10px; font-size: 0.95rem; font-weight: 800; cursor: pointer; margin-top: 16px; transition: background 0.2s; }
-    .btn-whatsapp:hover { background: #047857; }
-  </style>
+  <!-- Three.js (r128) & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 bg-blueprint">
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="topbar-content">
-      <div>🏭 Direct Corrugated Mill & Packaging Plant • Plot F 9, S.I.T.E. Hyderabad, Sindh</div>
-      <div>Direct Sales: <a href="tel:03332622963">0333 2622963</a> | WhatsApp: <a href="https://wa.me/923332622963" target="_blank">+92 333 2622963</a></div>
+  <!-- TOP INDUSTRIAL HUD BAR -->
+  <aside aria-label="Facility status" class="bg-slate-950 border-b border-slate-800 text-[11px] py-2 px-4 sticky top-0 z-50 font-mono">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4 text-slate-400">
+        <span class="text-amber-400 font-bold flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          B2B SPECIFICATION & VOLUMETRIC ENGINE
+        </span>
+        <span class="hidden lg:inline text-slate-500">|</span>
+        <span class="hidden lg:inline text-slate-400">Plot F 9, S.I.T.E. Hyderabad, Sindh</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="tel:03332622963" class="text-amber-400 font-bold hover:text-amber-300 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-phone"></i> 0333 2622963
+        </a>
+        <a href="https://wa.me/923332622963" target="_blank" class="text-emerald-400 font-bold hover:text-emerald-300 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Plant
+        </a>
+      </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="header-content">
-      <a href="index.html" class="brand-logo">
-        <div class="brand-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 16.5l-9 5.2-9-5.2V7.5L12 2.3l9 5.2v9zM12 4.1L5 8.1l7 4 7-4-7-4z"/></svg>
-        </div>
+  <!-- MAIN NAVIGATION -->
+  <nav class="sticky top-[35px] z-40 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 transition" />
         <div>
-          <div class="brand-title">BARKAT <span>PACKAGING</span></div>
-          <div class="brand-sub">S.I.T.E. Hyderabad • Factory Direct</div>
+          <div class="text-2xl font-black text-white tracking-tight font-display">BARKAT <span class="text-amber-500">PACKAGING</span></div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-400 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
         </div>
       </a>
-      <div class="header-nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="products.html" class="nav-link">Products</a>
-        <a href="agro-packaging.html" class="nav-link">Agro Export</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="tel:03332622963" class="btn-call">0333 2622963</a>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+        <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+        <a href="products.html" class="hover:text-amber-400 transition">Products</a>
+        <a href="agro-packaging.html" class="hover:text-amber-400 transition">Agro Export</a>
+        <a href="about.html" class="hover:text-amber-400 transition">Factory & Lab</a>
+        <a href="calculator.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">B2B Calculator</a>
+        <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>
       </div>
+      <div>
+        <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
+          <i class="fa-solid fa-phone-volume"></i> 0333 2622963
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CALCULATOR HEADER -->
+  <header class="py-12 border-b border-slate-800 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+        <i class="fa-solid fa-microchip"></i> Parametric B2B Cost & Specification Matrix
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-display">Corrugated Box Engineering Calculator</h1>
+      <p class="text-slate-400 text-sm mt-2">Design custom box dimensions, calculate precise blank sheet consumption, verify Mullen burst & ECT ratings, and preview ex-factory pricing.</p>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Corrugated Box <span>Quote & Spec Calculator</span></h1>
-    <p>Configure dimensions, plies, paper grade, and volume. Get estimated factory rates and send your RFQ directly to our Hyderabad plant on WhatsApp.</p>
-  </section>
-
-  <!-- CALCULATOR -->
-  <main class="calc-wrapper">
-    <div class="calc-grid">
-
-      <!-- LEFT: FORM -->
-      <div>
-        <!-- 1. DIMENSIONS -->
-        <div class="calc-card">
-          <div class="card-header">
-            <div class="card-title">1. Box Dimensions (Internal)</div>
-            <div class="unit-toggle-group">
-              <button type="button" class="unit-btn active" id="btn-unit-in" onclick="setUnit('in')">Inches</button>
-              <button type="button" class="unit-btn" id="btn-unit-cm" onclick="setUnit('cm')">cm</button>
-            </div>
-          </div>
-          <div class="dim-grid">
-            <div class="dim-box">
-              <div class="dim-box-label">Length (L)</div>
-              <div class="dim-input-wrap">
-                <input type="number" id="box-length" class="dim-input" value="14" min="2" max="100" step="0.5" oninput="recalcAll()" />
-                <span class="dim-unit-tag unit-label">in</span>
-              </div>
-            </div>
-            <div class="dim-box">
-              <div class="dim-box-label">Width (W)</div>
-              <div class="dim-input-wrap">
-                <input type="number" id="box-width" class="dim-input" value="10" min="2" max="100" step="0.5" oninput="recalcAll()" />
-                <span class="dim-unit-tag unit-label">in</span>
-              </div>
-            </div>
-            <div class="dim-box">
-              <div class="dim-box-label">Height (H)</div>
-              <div class="dim-input-wrap">
-                <input type="number" id="box-height" class="dim-input" value="10" min="2" max="100" step="0.5" oninput="recalcAll()" />
-                <span class="dim-unit-tag unit-label">in</span>
-              </div>
-            </div>
-          </div>
-          <div class="box-schematic">
-            <div>Volume: <strong id="val-volume-cft">0.81 CFT</strong> (<span id="val-volume-cbm">0.023 CBM</span>)</div>
-            <div>Blank Area: <strong id="val-sheet-area">0.65 m²</strong></div>
-            <div>Format: <strong>RSC Standard Box</strong></div>
-          </div>
-        </div>
-
-        <!-- 2. PLIES -->
-        <div class="calc-card">
-          <div class="card-header">
-            <div class="card-title">2. Carton Structure</div>
-          </div>
-          <div class="options-grid">
-            <div class="option-card" onclick="selectOption('carton', '3-ply', this)">
-              <div class="option-title">3-Ply Single Wall</div>
-              <div class="option-desc">B/C-Flute. For retail, courier, dry groceries (up to 20kg).</div>
-            </div>
-            <div class="option-card selected" onclick="selectOption('carton', '5-ply', this)">
-              <div class="option-title">5-Ply Double Wall</div>
-              <div class="option-desc">BC-Flute (7mm). Master boxes, pallet stacking, textiles (30-60kg).</div>
-            </div>
-            <div class="option-card" onclick="selectOption('carton', '7-ply', this)">
-              <div class="option-title">7-Ply Triple Wall</div>
-              <div class="option-desc">Heavy duty. Replaces wooden crates for export machinery (up to 500kg).</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. PAPER -->
-        <div class="calc-card">
-          <div class="card-header">
-            <div class="card-title">3. Paper Quality</div>
-          </div>
-          <div class="options-grid">
-            <div class="option-card" onclick="selectOption('paper', 'standard', this)">
-              <div class="option-title">Standard Kraft</div>
-              <div class="option-desc">Economical recycled testliner for general domestic shipping.</div>
-            </div>
-            <div class="option-card selected" onclick="selectOption('paper', 'virgin', this)">
-              <div class="option-title">Virgin Export Kraft</div>
-              <div class="option-desc">High-burst, moisture barrier for cold storage and mango exports.</div>
-            </div>
-            <div class="option-card" onclick="selectOption('paper', 'white', this)">
-              <div class="option-title">White Bleached Top</div>
-              <div class="option-desc">Clean white liner for vibrant retail and brand printing.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. QUANTITY -->
-        <div class="calc-card">
-          <div class="card-header">
-            <div class="card-title">4. Quantity Batch (Units)</div>
-          </div>
-          <div class="qty-presets">
-            <button type="button" class="qty-pill" onclick="setQuantity(500)">500</button>
-            <button type="button" class="qty-pill" onclick="setQuantity(1000)">1,000</button>
-            <button type="button" class="qty-pill active" onclick="setQuantity(2500)">2,500</button>
-            <button type="button" class="qty-pill" onclick="setQuantity(5000)">5,000</button>
-            <button type="button" class="qty-pill" onclick="setQuantity(10000)">10,000+</button>
-          </div>
-          <div class="qty-slider-wrap">
-            <input type="range" id="qty-slider" class="qty-slider" min="500" max="15000" step="250" value="2500" oninput="syncQty(this.value)" />
-            <input type="number" id="qty-input" class="qty-input-box" value="2500" min="300" max="50000" oninput="syncQty(this.value)" />
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: SUMMARY -->
-      <aside>
-        <div class="summary-card">
-          <div class="price-bracket-box">
-            <div class="price-label">Estimated Factory Quote</div>
-            <div class="price-amount" id="sum-unit-price">PKR 85 – 105</div>
-            <div class="price-unit">per box (ex-factory S.I.T.E. Hyderabad)</div>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <div class="spec-row"><span>Dimensions:</span><span id="sum-dim" class="spec-val">14" x 10" x 10"</span></div>
-            <div class="spec-row"><span>Volume:</span><span id="sum-vol" class="spec-val">0.81 CFT</span></div>
-            <div class="spec-row"><span>Structure:</span><span id="sum-carton" class="spec-val">5-Ply Double Wall</span></div>
-            <div class="spec-row"><span>Paper:</span><span id="sum-paper" class="spec-val">Virgin Export Kraft</span></div>
-            <div class="spec-row"><span>Quantity:</span><span id="sum-qty" class="spec-val">2,500 pcs</span></div>
-          </div>
-
-          <button type="button" class="btn-whatsapp" onclick="sendWhatsApp()">
-            💬 Send Specification to WhatsApp
-          </button>
+  <!-- MAIN CALCULATOR WORKSPACE -->
+  <main class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- INPUT SPECIFICATIONS (LEFT 5 COLS) -->
+        <div class="lg:col-span-5 space-y-6">
           
-          <div style="text-align: center; margin-top: 12px; font-size: 0.8rem; color: var(--text-muted);">
-            Direct Plant Line: <a href="tel:03332622963" style="color: var(--amber-400); text-decoration: none; font-weight: 700;">0333 2622963</a>
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
+            <h3 class="text-lg font-bold text-white font-display border-b border-slate-800 pb-3 flex items-center justify-between">
+              <span>1. Box Dimensions</span>
+              <span class="text-xs font-mono text-amber-400 font-normal">Inches (Internal)</span>
+            </h3>
+
+            <div class="grid grid-cols-3 gap-3">
+              <div>
+                <label class="block text-[11px] font-mono text-slate-300 font-bold mb-1">Length (L)</label>
+                <input type="number" id="calc-l" value="16" min="4" max="60" step="0.5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-300 font-bold mb-1">Width (W)</label>
+                <input type="number" id="calc-w" value="12" min="4" max="48" step="0.5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono text-slate-300 font-bold mb-1">Height (H)</label>
+                <input type="number" id="calc-h" value="10" min="3" max="48" step="0.5" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold focus:outline-none focus:border-amber-500 text-sm" oninput="runFullCalc()" />
+              </div>
+            </div>
+
+            <!-- Pre-set Industry Box Sizes -->
+            <div>
+              <span class="block text-[10px] font-mono text-slate-400 uppercase mb-2">Quick Standard Industry Presets:</span>
+              <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+                <button type="button" class="pill-tab text-left" onclick="applyPreset(16, 12, 10, '5-ply')">Standard Master (16×12×10)</button>
+                <button type="button" class="pill-tab text-left" onclick="applyPreset(18, 12, 8, '3-ply')">E-Comm / Apparel (18×12×8)</button>
+                <button type="button" class="pill-tab text-left" onclick="applyPreset(15, 10, 5, '3-ply')">5kg Mango Export (15×10×5)</button>
+                <button type="button" class="pill-tab text-left" onclick="applyPreset(24, 18, 18, '7-ply')">Heavy Export Crates (24×18×18)</button>
+              </div>
+            </div>
           </div>
+
+          <!-- Board Structure & Paper Grade -->
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
+            <h3 class="text-lg font-bold text-white font-display border-b border-slate-800 pb-3">2. Ply & Fluting Selection</h3>
+
+            <div>
+              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Corrugation Ply Structure:</label>
+              <div class="grid grid-cols-3 gap-2 text-xs font-mono">
+                <button type="button" class="pill-tab" id="btn-ply-3" onclick="selectPly('3-ply', this)">3-Ply Single</button>
+                <button type="button" class="pill-tab active" id="btn-ply-5" onclick="selectPly('5-ply', this)">5-Ply Double</button>
+                <button type="button" class="pill-tab" id="btn-ply-7" onclick="selectPly('7-ply', this)">7-Ply Triple</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Flute Profile:</label>
+              <div class="grid grid-cols-4 gap-2 text-xs font-mono">
+                <button type="button" class="pill-tab" onclick="selectFlute('B', this)">B-Flute</button>
+                <button type="button" class="pill-tab" onclick="selectFlute('C', this)">C-Flute</button>
+                <button type="button" class="pill-tab" onclick="selectFlute('E', this)">E-Flute</button>
+                <button type="button" class="pill-tab active" onclick="selectFlute('BC', this)">BC Flute</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Paper Grade:</label>
+              <select id="calc-paper" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs font-mono text-white focus:outline-none focus:border-amber-500" onchange="runFullCalc()">
+                <option value="std-kraft">Standard Recycled Kraft (140/120/140 GSM)</option>
+                <option value="virgin-kraft" selected>Virgin Export Kraft Liner (175/130/175 GSM)</option>
+                <option value="heavy-kraft">Extreme Heavy-Duty Testliner (220/150/220 GSM)</option>
+                <option value="white-duplex">White Bleached Top Liner for Custom Printing</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-mono text-slate-300 font-bold mb-2">Order Quantity:</label>
+              <div class="flex items-center gap-3">
+                <input type="number" id="calc-qty" value="2500" min="500" step="500" class="w-36 bg-slate-950 border border-slate-700 rounded-xl p-3 text-center text-amber-400 font-mono font-bold text-sm" oninput="runFullCalc()" />
+                <span class="text-xs font-mono text-slate-400">units (Minimum 500 pcs)</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </aside>
+
+        <!-- REAL-TIME SPEC SHEET & 3D (RIGHT 7 COLS) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- 3D PREVIEW CARD -->
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 shadow-2xl">
+            <div class="flex justify-between items-center mb-3 text-xs font-mono">
+              <span class="text-amber-400 font-bold"><i class="fa-solid fa-cube mr-1"></i> Interactive 3D Perspective</span>
+              <span class="text-slate-400">Orbit with mouse / drag</span>
+            </div>
+            <div id="three-box-canvas" style="height: 300px;" class="rounded-2xl"></div>
+          </div>
+
+          <!-- TECHNICAL SPECIFICATION SHEET -->
+          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3 font-mono">
+              <div>
+                <span class="text-amber-400 text-xs font-bold uppercase">Engineering Output</span>
+                <h3 class="text-xl font-bold text-white font-display">Technical Spec Sheet</h3>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] text-slate-400 block">MANUFACTURER</span>
+                <strong class="text-xs text-emerald-400">BARKAT PACKAGING</strong>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-slate-400 block text-[10px] uppercase">Calculated Volume</span>
+                <strong id="out-volume" class="text-amber-400 text-sm">1.11 CFT</strong>
+                <span id="out-cbm" class="text-[10px] text-slate-400 block">0.031 CBM</span>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-slate-400 block text-[10px] uppercase">Blank Sheet Area</span>
+                <strong id="out-sheet" class="text-white text-sm">0.83 m²</strong>
+                <span class="text-[10px] text-slate-400 block">per carton</span>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-slate-400 block text-[10px] uppercase">Mullen Burst (BST)</span>
+                <strong id="out-bst" class="text-amber-400 text-sm">22 kg/cm²</strong>
+                <span class="text-[10px] text-slate-400 block">~313 PSI rating</span>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-slate-400 block text-[10px] uppercase">Edge Crush (ECT)</span>
+                <strong id="out-ect" class="text-emerald-400 text-sm">55 lb/in</strong>
+                <span class="text-[10px] text-slate-400 block">9.6 kN/m</span>
+              </div>
+            </div>
+
+            <!-- PALLET STACKING METRICS -->
+            <div class="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-3 font-mono text-xs">
+              <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                <span class="text-slate-400 font-bold uppercase">Logistics Optimization (48"×40" Pallet):</span>
+                <span id="out-pallet-count" class="text-amber-400 font-bold">56 boxes / pallet</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 text-[11px]">
+                <div>20ft Container Load: <strong id="out-c20" class="text-white">560 boxes (10 pallets)</strong></div>
+                <div>40ft HC Container Load: <strong id="out-c40" class="text-emerald-400">1,176 boxes (21 pallets)</strong></div>
+              </div>
+            </div>
+
+            <!-- EX-FACTORY COST BREAKDOWN -->
+            <div class="bg-slate-950 border border-amber-500/40 rounded-2xl p-5 space-y-4">
+              <div class="flex flex-wrap justify-between items-end gap-2">
+                <div>
+                  <span class="text-[10px] font-mono text-slate-400 uppercase">Estimated Ex-Factory Wholesale Price</span>
+                  <div id="out-unit-price" class="text-3xl font-black text-amber-400 font-display">PKR 98 – 118</div>
+                  <span class="text-[10px] font-mono text-slate-400">per box (Ex-Mill S.I.T.E. Hyderabad)</span>
+                </div>
+                <div class="text-right font-mono text-xs">
+                  <span class="text-slate-400 block text-[10px]">TOTAL ESTIMATE (<span id="out-qty-label">2,500</span> PCS)</span>
+                  <strong id="out-total-price" class="text-xl font-bold text-white">PKR 270,000</strong>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                <button type="button" onclick="sendWhatsAppSpecQuote()" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition">
+                  <i class="fa-brands fa-whatsapp text-lg"></i> Send Spec to WhatsApp
+                </button>
+                <button type="button" onclick="window.print()" class="w-full py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-slate-700 transition">
+                  <i class="fa-solid fa-print text-amber-400"></i> Print Official Spec Sheet
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
   </main>
 
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-10 text-xs font-mono text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-8 h-8 rounded-lg object-cover" />
+        <span class="text-white font-bold font-display">BARKAT PACKAGING</span>
+      </div>
+      <div class="text-slate-400">
+        Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963
+      </div>
+      <div>© 2026 Barkat Packaging. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- CLIENT CALCULATION SCRIPTS -->
+  <script src="assets/js/three-box.js"></script>
   <script>
-    let unit = 'in';
-    let carton = '5-ply';
-    let paper = 'virgin';
-    let qty = 2500;
+    var currentPly = '5-ply';
+    var currentFlute = 'BC';
+    var boxVis = null;
 
-    function setUnit(u) {
-      unit = u;
-      document.getElementById('btn-unit-in').classList.toggle('active', u === 'in');
-      document.getElementById('btn-unit-cm').classList.toggle('active', u === 'cm');
-      document.querySelectorAll('.unit-label').forEach(el => el.innerText = u);
-      recalcAll();
+    window.addEventListener('load', function() {
+      try {
+        boxVis = new BoxVisualizer('three-box-canvas', {
+          length: 16,
+          width: 12,
+          height: 10,
+          materialType: 'virgin',
+          brandText: 'BARKAT PACKAGING'
+        });
+      } catch(e) {
+        console.error('Three.js init error:', e);
+      }
+      runFullCalc();
+    });
+
+    function selectPly(ply, btn) {
+      currentPly = ply;
+      btn.parentElement.querySelectorAll('.pill-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      runFullCalc();
     }
 
-    function selectOption(type, val, el) {
-      if (type === 'carton') carton = val;
-      if (type === 'paper') paper = val;
-      el.parentElement.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-      el.classList.add('selected');
-      recalcAll();
+    function selectFlute(flute, btn) {
+      currentFlute = flute;
+      btn.parentElement.querySelectorAll('.pill-tab').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      runFullCalc();
     }
 
-    function setQuantity(q) {
-      qty = parseInt(q);
-      document.getElementById('qty-input').value = qty;
-      document.getElementById('qty-slider').value = Math.min(qty, 15000);
-      recalcAll();
+    function applyPreset(l, w, h, ply) {
+      document.getElementById('calc-l').value = l;
+      document.getElementById('calc-w').value = w;
+      document.getElementById('calc-h').value = h;
+      currentPly = ply;
+      document.querySelectorAll('#btn-ply-3, #btn-ply-5, #btn-ply-7').forEach(function(b) { b.classList.remove('active'); });
+      if (ply === '3-ply') document.getElementById('btn-ply-3').classList.add('active');
+      if (ply === '5-ply') document.getElementById('btn-ply-5').classList.add('active');
+      if (ply === '7-ply') document.getElementById('btn-ply-7').classList.add('active');
+      runFullCalc();
     }
 
-    function syncQty(val) {
-      qty = parseInt(val) || 500;
-      document.getElementById('qty-input').value = qty;
-      document.getElementById('qty-slider').value = Math.min(qty, 15000);
-      recalcAll();
+    function runFullCalc() {
+      var L = parseFloat(document.getElementById('calc-l').value) || 16;
+      var W = parseFloat(document.getElementById('calc-w').value) || 12;
+      var H = parseFloat(document.getElementById('calc-h').value) || 10;
+      var qty = parseInt(document.getElementById('calc-qty').value) || 2500;
+      var paper = document.getElementById('calc-paper').value;
+
+      if (boxVis) boxVis.updateDimensions(L, W, H);
+
+      // Volume
+      var cft = (L * W * H) / 1728;
+      var cbm = cft * 0.0283;
+      document.getElementById('out-volume').innerText = cft.toFixed(2) + ' CFT';
+      document.getElementById('out-cbm').innerText = cbm.toFixed(3) + ' CBM';
+
+      // Sheet area in m²
+      var sheetArea = (((2 * (L + W)) + 1.5) * (H + W + 0.5)) / 1550;
+      document.getElementById('out-sheet').innerText = sheetArea.toFixed(2) + ' m²';
+
+      // Pallet count (48x40)
+      var perLayer = Math.max(1, Math.floor(48 / L) * Math.floor(40 / W));
+      var tiers = Math.max(1, Math.floor(72 / H));
+      var palTotal = perLayer * tiers;
+      document.getElementById('out-pallet-count').innerText = palTotal + ' boxes / pallet';
+      document.getElementById('out-c20').innerText = (palTotal * 10).toLocaleString() + ' boxes (10 pallets)';
+      document.getElementById('out-c40').innerText = (palTotal * 21).toLocaleString() + ' boxes (21 pallets)';
+
+      // BST & ECT
+      var bstVal = currentPly === '3-ply' ? 12 : currentPly === '5-ply' ? 22 : 32;
+      var ectVal = currentPly === '3-ply' ? 32 : currentPly === '5-ply' ? 55 : 82;
+      document.getElementById('out-bst').innerText = bstVal + ' kg/cm²';
+      document.getElementById('out-ect').innerText = ectVal + ' lb/in';
+
+      // Pricing model
+      var multiplier = currentPly === '3-ply' ? 95 : currentPly === '5-ply' ? 145 : 210;
+      if (paper === 'virgin-kraft') multiplier *= 1.1;
+      if (paper === 'heavy-kraft') multiplier *= 1.25;
+      if (paper === 'white-duplex') multiplier *= 1.2;
+
+      var baseUnit = sheetArea * multiplier;
+      var lowUnit = Math.round(baseUnit * 0.95);
+      var highUnit = Math.round(baseUnit * 1.12);
+      var totalEstimate = Math.round(((lowUnit + highUnit) / 2) * qty);
+
+      document.getElementById('out-unit-price').innerText = 'PKR ' + lowUnit + ' – ' + highUnit;
+      document.getElementById('out-qty-label').innerText = qty.toLocaleString();
+      document.getElementById('out-total-price').innerText = 'PKR ' + totalEstimate.toLocaleString();
     }
 
-    function recalcAll() {
-      let l = parseFloat(document.getElementById('box-length').value) || 10;
-      let w = parseFloat(document.getElementById('box-width').value) || 10;
-      let h = parseFloat(document.getElementById('box-height').value) || 10;
+    function sendWhatsAppSpecQuote() {
+      var L = document.getElementById('calc-l').value;
+      var W = document.getElementById('calc-w').value;
+      var H = document.getElementById('calc-h').value;
+      var qty = document.getElementById('calc-qty').value;
+      var price = document.getElementById('out-unit-price').innerText;
 
-      let lIn = unit === 'cm' ? l / 2.54 : l;
-      let wIn = unit === 'cm' ? w / 2.54 : w;
-      let hIn = unit === 'cm' ? h / 2.54 : h;
-
-      let cft = (lIn * wIn * hIn) / 1728;
-      let cbm = cft * 0.0283;
-      let sheetM2 = (((2 * (lIn + wIn)) + 1.5) * (hIn + wIn + 0.5)) / 1550;
-
-      document.getElementById('val-volume-cft').innerText = cft.toFixed(2) + ' CFT';
-      document.getElementById('val-volume-cbm').innerText = cbm.toFixed(3) + ' CBM';
-      document.getElementById('val-sheet-area').innerText = sheetM2.toFixed(2) + ' m²';
-
-      document.getElementById('sum-dim').innerText = `${l} x ${w} x ${h} ${unit}`;
-      document.getElementById('sum-vol').innerText = `${cft.toFixed(2)} CFT`;
-      document.getElementById('sum-carton').innerText = carton.toUpperCase();
-      document.getElementById('sum-paper').innerText = paper.charAt(0).toUpperCase() + paper.slice(1) + ' Kraft';
-      document.getElementById('sum-qty').innerText = qty.toLocaleString() + ' pcs';
-
-      // Estimate rate
-      let baseRate = sheetM2 * (carton === '3-ply' ? 95 : carton === '5-ply' ? 145 : 220);
-      if (paper === 'virgin') baseRate *= 1.15;
-      if (paper === 'white') baseRate *= 1.25;
-      if (qty >= 5000) baseRate *= 0.92;
-
-      let low = Math.round(baseRate * 0.95);
-      let high = Math.round(baseRate * 1.15);
-      document.getElementById('sum-unit-price').innerText = `PKR ${low} – ${high}`;
+      var msg = '*📐 B2B TECHNICAL SPECIFICATION RFQ — BARKAT PACKAGING*\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '📏 *Dimensions:* ' + L + '" L × ' + W + '" W × ' + H + '" H\n' +
+        '📦 *Ply & Fluting:* ' + currentPly + ' (' + currentFlute + ' Flute)\n' +
+        '🔢 *Quantity:* ' + qty + ' units\n' +
+        '💰 *Calculated Price:* ' + price + ' / box\n' +
+        '🏭 *Factory:* Plot F 9, S.I.T.E. Hyderabad, Sindh\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        'Please confirm order lead time and formal commercial invoice.';
+      window.open('https://wa.me/923332622963?text=' + encodeURIComponent(msg), '_blank');
     }
-
-    function sendWhatsApp() {
-      let l = document.getElementById('box-length').value;
-      let w = document.getElementById('box-width').value;
-      let h = document.getElementById('box-height').value;
-      let msg = `*📦 RFQ INQUIRY — BARKAT PACKAGING*\n` +
-        `━━━━━━━━━━━━━━━━━━━━━\n` +
-        `📏 *Dimensions:* ${l} x ${w} x ${h} ${unit}\n` +
-        `📦 *Structure:* ${carton.toUpperCase()}\n` +
-        `📜 *Paper:* ${paper.toUpperCase()} KRAFT\n` +
-        `🔢 *Quantity:* ${qty.toLocaleString()} pcs\n` +
-        `📍 *Factory:* Plot F 9, S.I.T.E. Hyderabad\n` +
-        `━━━━━━━━━━━━━━━━━━━━━\n` +
-        `Please confirm final price and delivery schedule.`;
-      window.open(`https://wa.me/923332622963?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-
-    recalcAll();
   </script>
 </body>
 </html>
