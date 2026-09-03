@@ -1,16 +1,22 @@
-/* Barkat Packaging — Premium Editorial Industrial Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+/* Barkat Packaging — Modern Swiss Industrial Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap');
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --color-kraft-50: #FAF6F0;
-  --color-kraft-100: #F4ECE1;
-  --color-kraft-200: #E6D5C1;
+  --color-kraft-100: #F3E8D7;
+  --color-kraft-200: #E4D0B5;
+  --color-kraft-400: #C89658;
   --color-kraft-500: #B7834E;
-  --color-kraft-600: #966432;
-  --color-kraft-800: #5C3A19;
+  --color-kraft-700: #63492A;
+
+  --color-carbon-950: #0C0D0E;
+  --color-carbon-900: #141619;
+  --color-carbon-800: #23272E;
+  --color-carbon-100: #E4E7EE;
 
   --color-amber-500: #D97706;
   --color-amber-600: #B45309;
@@ -18,11 +24,10 @@
   --bg-page: #F8F7F4;
   --bg-surface: #FFFFFF;
   --border-light: #E5E2DC;
-  --border-focus: #B7834E;
+  --border-dark: #23272E;
   
-  --text-main: #1C1917;
+  --text-main: #141619;
   --text-muted: #57534E;
-  --text-light: #78716C;
 }
 
 body {
@@ -33,27 +38,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-section {
-  scroll-margin-top: 90px;
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
 }
 
 .font-mono {
   font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
 }
 
 /* Subtle Technical Grid */
 .bg-kraft-grid {
   background-image: 
-    linear-gradient(to right, rgba(183, 131, 78, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(183, 131, 78, 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-/* Tactile Cardboard Tape Strip */
-.tape-strip {
-  background: #E8D8C3;
-  border-left: 2px dashed #CBB59D;
-  border-right: 2px dashed #CBB59D;
+    linear-gradient(to right, rgba(200, 150, 88, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 150, 88, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 /* Range Slider */
@@ -87,27 +87,28 @@ input[type=range]::-webkit-slider-thumb:hover {
   border: 1px solid #E2E8F0;
   color: #475569;
   padding: 6px 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 0.78rem;
   font-weight: 600;
   transition: all 0.15s ease;
   cursor: pointer;
+  font-family: var(--font-mono);
 }
 .pill-tab:hover {
   border-color: #B7834E;
-  color: #1E293B;
+  color: #141619;
 }
 .pill-tab.active {
-  background: #1C1917;
+  background: #141619;
   color: #FFFFFF;
-  border-color: #1C1917;
+  border-color: #141619;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* Mullen Certified Seal */
-.mullen-seal {
-  width: 100px;
-  height: 100px;
+/* Box Maker's Certificate (BMC) Stamp */
+.bmc-stamp {
+  width: 110px;
+  height: 110px;
   border: 2px dashed #B7834E;
   border-radius: 50%;
   display: flex;
@@ -115,19 +116,40 @@ input[type=range]::-webkit-slider-thumb:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4px;
-  transform: rotate(-6deg);
-  background: #FDFBF7;
+  padding: 6px;
+  background: #FAF8F5;
+  font-family: var(--font-mono);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 /* 3D Canvas Viewport */
 #three-box-canvas {
   width: 100%;
-  height: 440px;
+  height: 460px;
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   background: #EDEAE4;
+}
+
+/* Section Header Swiss Accent */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #B7834E;
+  margin-bottom: 8px;
+}
+.section-tag::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: #B7834E;
 }
 
 /* Lightbox Modal */
@@ -139,7 +161,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(8px);
   align-items: center;
   justify-content: center;
