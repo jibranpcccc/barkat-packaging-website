@@ -5,5 +5,23 @@ Disallow: /scratch/
 Disallow: /.git/
 Disallow: /.system_generated/
 
-Sitemap: /sitemap.xml
-Sitemap: https://barkatpackaging.pk/sitemap.xml
+# Generative AI Search & Answer Engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://jibranpcccc.github.io/barkat-packaging-website/sitemap.xml
