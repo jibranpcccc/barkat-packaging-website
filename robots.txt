@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /scratch/
+Disallow: /.git/
+Disallow: /.system_generated/
+
+Sitemap: /sitemap.xml
+Sitemap: https://barkatpackaging.pk/sitemap.xml

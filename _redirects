@@ -1,0 +1,24 @@
+# Netlify Routing & Custom Domain Canonicalization
+https://barkatpackaging.pk/*        /:splat        301!
+http://barkatpackaging.pk/*         /:splat        301!
+https://www.barkatpackaging.pk/*    /:splat        301!
+http://www.barkatpackaging.pk/*     /:splat        301!
+
+https://www./*   /:splat        301!
+http://www./*    /:splat        301!
+http:///*        /:splat        301!
+
+/about           /about.html           200
+/products        /products.html        200
+/agro-packaging  /agro-packaging.html  200
+/calculator      /calculator.html      200
+/contact         /contact.html         200
+
+/index.html              /                 301!
+/about.html              /about            301!
+/products.html           /products         301!
+/agro-packaging.html     /agro-packaging   301!
+/calculator.html         /calculator       301!
+/contact.html            /contact          301!
+
+/*                       /index.html       404
