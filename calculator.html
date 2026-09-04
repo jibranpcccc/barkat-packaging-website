@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B2B Corrugated Box Quote & Spec Calculator | Barkat Packaging Hyderabad</title>
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="Interactive B2B Box Calculator & Freight Estimator | Barkat Packaging" />
+  <meta property="og:description" content="Configure custom box dimensions in inches or cm, calculate blank sheet area, pallet stacking efficiency, 20ft/40ft container payloads, and generate instant WhatsApp RFQ quotations." />
+  <meta property="og:url" content="https://jibranpcccc.github.io/barkat-packaging-website/calculator.html" />
+  <meta property="og:image" content="https://jibranpcccc.github.io/barkat-packaging-website/assets/images/barkat-packaging-factory-floor-production-workers-site-hyderabad.jpg" />
+  <meta property="business:contact_data:street_address" content="Plot F 9, S.I.T.E. Industrial Area" />
+  <meta property="business:contact_data:locality" content="Hyderabad" />
+  <meta property="business:contact_data:region" content="Sindh" />
+  <meta property="business:contact_data:postal_code" content="71800" />
+  <meta property="business:contact_data:country_name" content="Pakistan" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Interactive B2B Box Calculator & Freight Estimator | Barkat Packaging" />
+  <meta name="twitter:description" content="Configure custom box dimensions in inches or cm, calculate blank sheet area, pallet stacking efficiency, 20ft/40ft container payloads, and generate instant WhatsApp RFQ quotations." />
+  <meta name="twitter:image" content="https://jibranpcccc.github.io/barkat-packaging-website/assets/images/barkat-packaging-factory-floor-production-workers-site-hyderabad.jpg" />
+
+  <link rel="canonical" href="https://jibranpcccc.github.io/barkat-packaging-website/calculator.html" />
+
   <meta name="description" content="Calculate real-time B2B corrugated box dimensions, board GSM, Mullen bursting strength, pallet stacking efficiency, and ex-factory pricing from Barkat Packaging, S.I.T.E. Hyderabad. Direct WhatsApp RFQ compiler." />
 
   <!-- Tailwind CSS CDN -->
@@ -16,6 +41,28 @@
   <!-- Three.js (r128) & OrbitControls -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "B2B Box Calculator",
+        "item": "https://jibranpcccc.github.io/barkat-packaging-website/calculator.html"
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body class="bg-[#F8F7F4] text-stone-900 antialiased selection:bg-amber-500 selection:text-white bg-kraft-grid">
 
@@ -262,7 +309,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-4">
       <div class="flex items-center gap-3">
         <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-8 h-8 rounded-lg object-cover" />
-        <span class="text-stone-900 font-bold font-display">BARKAT PACKAGING</span>
+        <span class="text-white font-bold font-display">BARKAT PACKAGING</span>
       </div>
       <div class="text-stone-500">
         Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800 | Phone: 0333 2622963
@@ -387,5 +434,15 @@
       window.open('https://wa.me/923332622963?text=' + encodeURIComponent(msg), '_blank');
     }
   </script>
+  <!-- STICKY MOBILE BOTTOM BAR (High-converting WhatsApp & Call direct for Pakistan) -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-stone-300 px-4 py-2.5 flex items-center gap-3 shadow-2xl">
+    <a href="tel:03332622963" class="flex-1 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold text-xs flex items-center justify-center gap-2 font-mono shadow-sm">
+      <i class="fa-solid fa-phone"></i> Call Factory
+    </a>
+    <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20factory%20quote" target="_blank" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 font-mono shadow-sm">
+      <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp RFQ
+    </a>
+  </div>
+
 </body>
 </html>
