@@ -89,13 +89,13 @@
   </aside>
 
   <!-- MAIN NAVIGATION -->
-  <nav class="sticky top-[35px] z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/90 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-      <a href="index.html" class="flex items-center gap-3.5 group">
-        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-12 h-12 rounded-xl object-cover border border-amber-400 shadow-lg shadow-amber-500/20 group-hover:border-amber-400 transition" />
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/90 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3.5 group">
+        <img src="assets/images/barkat-packaging-logo.jpg" alt="Barkat Packaging Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover border border-amber-500/40 shadow-sm group-hover:border-amber-500 transition" />
         <div>
-          <div class="text-2xl font-black text-stone-900 tracking-tight font-display">BARKAT <span class="text-amber-600">PACKAGING</span></div>
-          <div class="text-[10px] uppercase tracking-widest text-stone-500 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
+          <div class="text-lg sm:text-2xl font-bold text-[#141619] tracking-tight font-display leading-tight">BARKAT <span class="text-amber-600">PACKAGING</span></div>
+          <div class="text-[9px] sm:text-[10px] uppercase tracking-widest text-stone-500 font-mono font-medium">S.I.T.E. Hyderabad • Est. 2000</div>
         </div>
       </a>
       <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-stone-600">
@@ -103,14 +103,25 @@
         <a href="products.html" class="hover:text-amber-600 transition">Products</a>
         <a href="agro-packaging.html" class="hover:text-amber-600 transition">Agro Export</a>
         <a href="about.html" class="hover:text-amber-600 transition">Factory & Lab</a>
-        <a href="calculator.html" class="text-amber-700 font-bold border-b-2 border-amber-400 pb-1">B2B Calculator</a>
+        <a href="calculator.html" class="text-stone-950 font-bold border-b-2 border-stone-900 pb-1">B2B Calculator</a>
         <a href="contact.html" class="hover:text-amber-600 transition">Contact</a>
       </div>
-      <div>
-        <a href="tel:03332622963" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="tel:03332622963" class="hidden sm:inline-flex px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-sm transition items-center gap-2 font-mono">
           <i class="fa-solid fa-phone-volume"></i> 0333 2622963
         </a>
+        <button type="button" onclick="toggleSubpageNav()" class="md:hidden w-10 h-10 rounded-xl bg-stone-100 border border-stone-300 text-stone-800 flex items-center justify-center text-base focus:outline-none">
+          <i class="fa-solid fa-bars" id="sub-burger-icon"></i>
+        </button>
       </div>
+    </div>
+    <div id="sub-nav-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-5 py-4 space-y-3 font-mono text-xs">
+      <a href="index.html" class="block py-2 text-stone-700 hover:text-amber-600 border-b border-stone-100">Home</a>
+      <a href="products.html" class="block py-2 text-stone-700 hover:text-amber-600 border-b border-stone-100">Products Catalog</a>
+      <a href="agro-packaging.html" class="block py-2 text-stone-700 hover:text-amber-600 border-b border-stone-100">Agro Export Packaging</a>
+      <a href="about.html" class="block py-2 text-stone-700 hover:text-amber-600 border-b border-stone-100">Factory & Lab Heritage</a>
+      <a href="calculator.html" class="block py-2 font-bold text-amber-700 border-b border-stone-100">B2B Rate Calculator</a>
+      <a href="contact.html" class="block py-2 text-stone-700 hover:text-amber-600">Contact & Plant Location</a>
     </div>
   </nav>
 
@@ -444,5 +455,22 @@
     </a>
   </div>
 
+
+  <script>
+    function toggleSubpageNav() {
+      var menu = document.getElementById('sub-nav-menu');
+      var icon = document.getElementById('sub-burger-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+  </script>
 </body>
+
 </html>
