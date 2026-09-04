@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Corrugated Box Price & Size Calculator | Barkat Packaging Hyderabad</title>
   <!-- Open Graph / Social Media Preview -->
   <meta property="og:type" content="business.business" />
@@ -30,9 +30,6 @@
   <link rel="canonical" href="https://jibranpcccc.github.io/barkat-packaging-website/calculator.html" />
 
   <meta name="description" content="Calculate custom corrugated box dimensions, blank sheet area, Mullen burst rating, pallet stacking efficiency, and ex-factory pricing from Barkat Packaging, S.I.T.E. Hyderabad." />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
@@ -90,7 +87,7 @@
         <a href="https://wa.me/923332622963" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded transition">
           <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
         </a>
-        <button type="button" onclick="toggleNav()" class="md:hidden p-2 text-stone-700 rounded border border-stone-300 hover:bg-stone-100">
+        <button type="button" onclick="toggleNav()" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu" class="md:hidden p-2 text-stone-700 rounded border border-stone-300 hover:bg-stone-100">
           <i class="fa-solid fa-bars" id="burger-icon"></i>
         </button>
       </div>
@@ -480,14 +477,18 @@
     function toggleNav() {
       var menu = document.getElementById('nav-menu');
       var icon = document.getElementById('burger-icon');
-      if (menu.classList.contains('hidden')) {
+      var btn = document.querySelector('button[aria-controls="nav-menu"]');
+      var isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
         menu.classList.remove('hidden');
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-xmark');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
       } else {
         menu.classList.add('hidden');
         icon.classList.remove('fa-xmark');
         icon.classList.add('fa-bars');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     }
   </script>

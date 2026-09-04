@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Products Catalogue | Corrugated Boxes | Barkat Packaging Hyderabad</title>
   <meta name="description" content="Catalogue of corrugated packaging manufactured at Plot F 9, S.I.T.E. Hyderabad. 3-ply, 5-ply, 7-ply master cartons, mango export boxes, die-cut mailers, and corrugated rolls." />
   <meta name="keywords" content="corrugated boxes catalogue hyderabad, 5 ply master cartons sindh, 3 ply parcel boxes, mango export packaging, die cut cartons" />
@@ -21,9 +21,6 @@
   <meta property="og:description" content="3-ply, 5-ply, 7-ply shipping cartons, mango export boxes, and custom die-cuts manufactured at Plot F 9, S.I.T.E. Industrial Area, Hyderabad." />
   <meta property="og:url" content="https://jibranpcccc.github.io/barkat-packaging-website/products.html" />
   <meta property="og:image" content="https://jibranpcccc.github.io/barkat-packaging-website/assets/images/barkat-packaging-factory-floor-production-workers-site-hyderabad.jpg" />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
@@ -99,7 +96,7 @@
         <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20factory%20quote" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold rounded border border-emerald-800 transition">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp
         </a>
-        <button type="button" onclick="toggleMobileNav()" aria-label="Menu" class="md:hidden w-10 h-10 rounded border border-stone-300 text-stone-800 flex items-center justify-center text-base">
+        <button type="button" onclick="toggleMobileNav()" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav-menu" class="md:hidden w-10 h-10 rounded border border-stone-300 text-stone-800 flex items-center justify-center text-base">
           <i class="fa-solid fa-bars" id="nav-burger-icon"></i>
         </button>
       </div>
@@ -466,14 +463,18 @@
     function toggleMobileNav() {
       var menu = document.getElementById('mobile-nav-menu');
       var icon = document.getElementById('nav-burger-icon');
-      if (menu.classList.contains('hidden')) {
+      var btn = document.querySelector('button[aria-controls="mobile-nav-menu"]');
+      var isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
         menu.classList.remove('hidden');
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-xmark');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
       } else {
         menu.classList.add('hidden');
         icon.classList.remove('fa-xmark');
         icon.classList.add('fa-bars');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     }
   </script>

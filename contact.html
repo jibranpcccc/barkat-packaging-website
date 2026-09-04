@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Contact Factory & Logistics Access | Barkat Packaging Hyderabad</title>
   <!-- Open Graph / Social Media Preview -->
   <meta property="og:type" content="business.business" />
@@ -30,9 +30,6 @@
   <link rel="canonical" href="https://jibranpcccc.github.io/barkat-packaging-website/contact.html" />
 
   <meta name="description" content="Contact Barkat Packaging at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh 71800. Direct plant manager line: 0333 2622963. Container freight directions, RFQ submissions, and wholesale packaging orders." />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
@@ -86,7 +83,7 @@
         <a href="https://wa.me/923332622963" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded transition">
           <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
         </a>
-        <button type="button" onclick="toggleNav()" class="md:hidden p-2 text-stone-700 rounded border border-stone-300 hover:bg-stone-100">
+        <button type="button" onclick="toggleNav()" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu" class="md:hidden p-2 text-stone-700 rounded border border-stone-300 hover:bg-stone-100">
           <i class="fa-solid fa-bars" id="burger-icon"></i>
         </button>
       </div>
@@ -190,50 +187,53 @@
             <p class="text-xs text-stone-600 mt-1">Fill in your required carton details below. We will calculate the ex-mill rate and respond promptly via WhatsApp.</p>
           </div>
 
-          <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs">
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-sm sm:text-base">
             <div>
-              <label class="block text-stone-700 font-medium mb-1">Company / Mill / Farm Name:</label>
-              <input type="text" id="c-company" required placeholder="e.g. Al-Mehran Textile Mills / Sindh Orchards" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 text-stone-900 focus:outline-none focus:border-amber-800" />
+              <label for="c-company" class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Company / Mill / Farm Name:</label>
+              <input type="text" id="c-company" required placeholder="e.g. Al-Mehran Textile Mills / Sindh Orchards" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 sm:p-3 text-stone-900 text-sm sm:text-base focus:outline-none focus:border-amber-800" />
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label class="block text-stone-700 font-medium mb-1">Contact Person:</label>
-                <input type="text" id="c-person" required placeholder="Your Name" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 text-stone-900 focus:outline-none focus:border-amber-800" />
+                <label for="c-person" class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Contact Person:</label>
+                <input type="text" id="c-person" required placeholder="Your Name" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 sm:p-3 text-stone-900 text-sm sm:text-base focus:outline-none focus:border-amber-800" />
               </div>
               <div>
-                <label class="block text-stone-700 font-medium mb-1">Phone / WhatsApp Number:</label>
-                <input type="tel" id="c-phone" required placeholder="0333..." class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 text-stone-900 focus:outline-none focus:border-amber-800" />
+                <label for="c-phone" class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Phone / WhatsApp Number:</label>
+                <input type="tel" id="c-phone" required placeholder="0333..." class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 sm:p-3 text-stone-900 text-sm sm:text-base focus:outline-none focus:border-amber-800" />
               </div>
             </div>
 
             <div>
-              <label class="block text-stone-700 font-medium mb-1">Required Box Dimensions (Inches - Internal):</label>
-              <div class="grid grid-cols-3 gap-2">
+              <span class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Required Box Dimensions (Inches - Internal):</span>
+              <div class="grid grid-cols-3 gap-2 sm:gap-3">
                 <div>
-                  <input type="number" id="c-l" value="16" placeholder="Length" class="w-full bg-stone-50 border border-stone-300 rounded p-2 text-center text-stone-900 font-mono" />
-                  <span class="text-[10px] text-stone-500 block text-center mt-0.5">Length (L)</span>
+                  <label for="c-l" class="sr-only">Length (L) in inches</label>
+                  <input type="number" id="c-l" value="16" placeholder="Length" class="w-full bg-stone-50 border border-stone-300 rounded p-2 sm:p-2.5 text-center text-stone-900 font-mono text-sm sm:text-base" />
+                  <label for="c-l" class="text-xs text-stone-600 block text-center mt-1">Length (L)</label>
                 </div>
                 <div>
-                  <input type="number" id="c-w" value="12" placeholder="Width" class="w-full bg-stone-50 border border-stone-300 rounded p-2 text-center text-stone-900 font-mono" />
-                  <span class="text-[10px] text-stone-500 block text-center mt-0.5">Width (W)</span>
+                  <label for="c-w" class="sr-only">Width (W) in inches</label>
+                  <input type="number" id="c-w" value="12" placeholder="Width" class="w-full bg-stone-50 border border-stone-300 rounded p-2 sm:p-2.5 text-center text-stone-900 font-mono text-sm sm:text-base" />
+                  <label for="c-w" class="text-xs text-stone-600 block text-center mt-1">Width (W)</label>
                 </div>
                 <div>
-                  <input type="number" id="c-h" value="10" placeholder="Height" class="w-full bg-stone-50 border border-stone-300 rounded p-2 text-center text-stone-900 font-mono" />
-                  <span class="text-[10px] text-stone-500 block text-center mt-0.5">Height (H)</span>
+                  <label for="c-h" class="sr-only">Height (H) in inches</label>
+                  <input type="number" id="c-h" value="10" placeholder="Height" class="w-full bg-stone-50 border border-stone-300 rounded p-2 sm:p-2.5 text-center text-stone-900 font-mono text-sm sm:text-base" />
+                  <label for="c-h" class="text-xs text-stone-600 block text-center mt-1">Height (H)</label>
                 </div>
               </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label class="block text-stone-700 font-medium mb-1">Order Quantity:</label>
-                <input type="number" id="c-qty" value="2500" min="500" step="500" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 text-stone-900 font-mono focus:outline-none focus:border-amber-800" />
-                <span class="text-[10px] text-stone-500 block mt-0.5">Min wholesale order: 500 pcs</span>
+                <label for="c-qty" class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Order Quantity:</label>
+                <input type="number" id="c-qty" value="2500" min="500" step="500" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 sm:p-3 text-stone-900 font-mono text-sm sm:text-base focus:outline-none focus:border-amber-800" />
+                <span class="text-xs text-stone-500 block mt-1">Min wholesale order: 500 pcs</span>
               </div>
               <div>
-                <label class="block text-stone-700 font-medium mb-1">Carton Ply Type:</label>
-                <select id="c-ply" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 text-stone-900 focus:outline-none focus:border-amber-800">
+                <label for="c-ply" class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Carton Ply Type:</label>
+                <select id="c-ply" class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 sm:p-3 text-stone-900 text-sm sm:text-base focus:outline-none focus:border-amber-800">
                   <option value="5-Ply Double Wall (Master)">5-Ply Double Wall (Master)</option>
                   <option value="3-Ply Single Wall (Standard)">3-Ply Single Wall (Standard)</option>
                   <option value="7-Ply Triple Wall (Export)">7-Ply Triple Wall (Heavy Export)</option>
@@ -243,14 +243,14 @@
             </div>
 
             <div>
-              <label class="block text-stone-700 font-medium mb-1">Specific Requirements / Notes:</label>
-              <textarea id="c-msg" rows="3" placeholder="Product to be packed, estimated weight per box, printing requirements, or delivery city in Sindh..." class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 text-stone-900 focus:outline-none focus:border-amber-800"></textarea>
+              <label for="c-msg" class="block text-stone-700 font-medium mb-1 text-sm sm:text-base">Specific Requirements / Notes:</label>
+              <textarea id="c-msg" rows="3" placeholder="Product to be packed, estimated weight per box, printing requirements, or delivery city in Sindh..." class="w-full bg-stone-50 border border-stone-300 rounded p-2.5 sm:p-3 text-stone-900 text-sm sm:text-base focus:outline-none focus:border-amber-800"></textarea>
             </div>
 
-            <button type="submit" class="w-full py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded flex items-center justify-center gap-2 transition shadow-sm">
+            <button type="submit" class="w-full py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm sm:text-base rounded flex items-center justify-center gap-2 transition shadow-sm">
               <i class="fa-brands fa-whatsapp text-base"></i> Send RFQ via WhatsApp
             </button>
-            <div class="text-[11px] text-stone-500 text-center">
+            <div class="text-xs text-stone-500 text-center mt-1">
               Opens directly in WhatsApp with your prefilled specifications for instant review.
             </div>
           </form>
@@ -344,14 +344,18 @@
     function toggleNav() {
       var menu = document.getElementById('nav-menu');
       var icon = document.getElementById('burger-icon');
-      if (menu.classList.contains('hidden')) {
+      var btn = document.querySelector('button[aria-controls="nav-menu"]');
+      var isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
         menu.classList.remove('hidden');
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-xmark');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
       } else {
         menu.classList.add('hidden');
         icon.classList.remove('fa-xmark');
         icon.classList.add('fa-bars');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     }
   </script>

@@ -1,6 +1,6 @@
 # Barkat Packaging
 
-> Pakistan's premier corrugated box and industrial packaging manufacturer located at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh.
+> Corrugated box and industrial packaging manufacturer located at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh.
 
 ## Quick Facts
 - **Entity Type:** Corrugated Box & Industrial Packaging Manufacturer
@@ -10,7 +10,6 @@
 - **Phone:** +92 333 2622963
 - **Email:** jibranpccc@gmail.com
 - **Operating Hours:** Monday – Saturday: 09:00 to 18:30 PKT
-- **Verified Rating:** 5.0 / 5.0 Stars (Google Maps Verified)
 
 ## Core Capabilities & Product Lines
 - **3-Ply & 5-Ply Master Cartons:** High burst factor, high Edge Crush Test (ECT) corrugated cartons for industrial warehousing and freight.
