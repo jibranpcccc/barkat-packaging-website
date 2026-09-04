@@ -12,6 +12,29 @@
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products Catalog & Technical Fluting Matrix",
+        "item": "https://jibranpcccc.github.io/barkat-packaging-website/products.html"
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body class="bg-[#F8F7F4] text-stone-900 antialiased selection:bg-amber-500 selection:text-white bg-kraft-grid">
 
@@ -76,12 +99,37 @@
 
   <!-- PRODUCT CATALOG GRID -->
   <main class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+      <!-- INTERACTIVE SEARCH & CATEGORY FILTER BAR -->
+      <div class="bg-white border border-stone-200 rounded-3xl p-6 sm:p-7 shadow-sm space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="relative flex-1">
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-sm"></i>
+            <input type="text" id="product-search-input" placeholder="Search catalog by keyword... (e.g. mango, 5-ply, pizza, mailer, textile, 7-ply)" class="w-full bg-[#FAF9F6] border border-stone-300 rounded-xl pl-11 pr-4 py-3 text-xs font-mono text-stone-900 focus:outline-none focus:border-amber-600" oninput="filterProductCatalog()" />
+          </div>
+          <div class="text-xs font-mono text-stone-500" id="product-search-count">
+            Showing all 8 packaging categories
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 text-xs font-mono pt-1">
+          <button type="button" class="pill-tab active" data-filter="all" onclick="setProductFilter('all', this)">All Products (8)</button>
+          <button type="button" class="pill-tab" data-filter="3ply" onclick="setProductFilter('3ply', this)">3-Ply Single Wall</button>
+          <button type="button" class="pill-tab" data-filter="5ply" onclick="setProductFilter('5ply', this)">5-Ply Master Cartons</button>
+          <button type="button" class="pill-tab" data-filter="7ply" onclick="setProductFilter('7ply', this)">7-Ply Triple Wall</button>
+          <button type="button" class="pill-tab" data-filter="agro" onclick="setProductFilter('agro', this)">Mango & Fruit Export</button>
+          <button type="button" class="pill-tab" data-filter="ecommerce" onclick="setProductFilter('ecommerce', this)">E-Commerce Mailers</button>
+          <button type="button" class="pill-tab" data-filter="food" onclick="setProductFilter('food', this)">Food & Pizza</button>
+          <button type="button" class="pill-tab" data-filter="diecut" onclick="setProductFilter('diecut', this)">Die-Cut & Partitions</button>
+          <button type="button" class="pill-tab" data-filter="rolls" onclick="setProductFilter('rolls', this)">Rolls & Edge Protectors</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-catalog-grid">
         
         <!-- CARD 1: 3-PLY SINGLE WALL -->
-        <div class="bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/50 transition flex flex-col justify-between group">
+        <div class="product-card bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/50 transition flex flex-col justify-between group" data-category="3ply">
           <div>
             <div class="h-56 overflow-hidden relative">
               <img src="assets/images/barkat-packaging-fluted-corrugated-board-stacks-fmcg.jpg" alt="3-Ply Corrugated Cartons" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
@@ -113,7 +161,7 @@
         </div>
 
         <!-- CARD 2: 5-PLY DOUBLE WALL MASTER CARTON -->
-        <div class="bg-white border border-amber-400 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-400 transition flex flex-col justify-between group relative">
+        <div class="product-card bg-white border border-amber-400 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-400 transition flex flex-col justify-between group relative" data-category="5ply">
           <div class="absolute top-3 right-3 z-10 bg-amber-500 text-slate-950 font-black text-[10px] font-mono px-3 py-1 rounded-full shadow-lg">
             TOP B2B SELLER
           </div>
@@ -244,7 +292,7 @@
         </div>
 
         <!-- CARD 6: CORRUGATED ROLLS & EDGE PROTECTORS -->
-        <div class="bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/50 transition flex flex-col justify-between group">
+        <div class="product-card bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/50 transition flex flex-col justify-between group" data-category="rolls">
           <div>
             <div class="h-56 overflow-hidden relative">
               <img src="assets/images/barkat-packaging-bulk-kraft-paper-warehouse-inventory.jpg" alt="Corrugated Rolls Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
@@ -266,6 +314,71 @@
                   <strong class="text-stone-900">3mm – 6mm Edge Board</strong>
                 </div>
               </div>
+
+        <!-- CARD 7: E-COMMERCE SELF-LOCKING MAILERS -->
+        <div class="product-card bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/50 transition flex flex-col justify-between group" data-category="ecommerce diecut">
+          <div>
+            <div class="h-56 overflow-hidden relative">
+              <img src="assets/images/barkat-packaging-custom-die-cut-cartons-packaging-hyderabad.jpg" alt="E-Commerce Mailer Boxes Pakistan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-stone-50/80 backdrop-blur-md px-3 py-1 rounded-lg text-amber-700 font-mono text-[10px] border border-stone-200 font-bold">E-COMMERCE MAILER</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-bold text-stone-900 font-display">Self-Locking Mailer Boxes</h3>
+              <p class="text-stone-500 text-xs leading-relaxed">
+                Tuck-front self-locking die-cut mailers designed for Daraz, Shopify, fashion, and courier brands across Pakistan. High-GSM unbleached Kraft, zero tape required for closure.
+              </p>
+              <div class="grid grid-cols-2 gap-2 text-[11px] font-mono pt-2">
+                <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+                  <span class="text-stone-500 block text-[9px] uppercase">Closure Style</span>
+                  <strong class="text-amber-700">FEFCO 0427 Tuck</strong>
+                </div>
+                <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+                  <span class="text-stone-500 block text-[9px] uppercase">Custom Print</span>
+                  <strong class="text-stone-900">Flexo 1–4 Colors</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20quote%20for%20E-Commerce%20Mailer%20Boxes" target="_blank" class="w-full py-3 rounded-xl bg-stone-900 text-white hover:bg-stone-800 hover:text-amber-400 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition font-mono">
+              <i class="fa-brands fa-whatsapp"></i> Request Mailer Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 8: FOOD & PIZZA CORRUGATED BOXES -->
+        <div class="product-card bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/50 transition flex flex-col justify-between group" data-category="food diecut">
+          <div>
+            <div class="h-56 overflow-hidden relative">
+              <img src="assets/images/barkat-packaging-heavy-duty-platen-die-cutting-press.jpg" alt="Pizza Boxes Manufacturer Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-stone-50/80 backdrop-blur-md px-3 py-1 rounded-lg text-amber-700 font-mono text-[10px] border border-stone-200 font-bold">FOOD & PIZZA BOXES</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-bold text-stone-900 font-display">Pizza & Bakery Cartons</h3>
+              <p class="text-stone-500 text-xs leading-relaxed">
+                Food-grade B-flute and E-flute corrugated boxes with side steam ventilation slots. Heat-retaining, anti-grease Kraft liner manufactured for restaurants and bakeries in Hyderabad & Kotri.
+              </p>
+              <div class="grid grid-cols-2 gap-2 text-[11px] font-mono pt-2">
+                <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+                  <span class="text-stone-500 block text-[9px] uppercase">Standard Sizes</span>
+                  <strong class="text-amber-700">7", 10", 12", 14", 16"</strong>
+                </div>
+                <div class="bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+                  <span class="text-stone-500 block text-[9px] uppercase">Compliance</span>
+                  <strong class="text-emerald-700">Food-Grade Kraft</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20quote%20for%20Pizza%20and%20Food%20Boxes" target="_blank" class="w-full py-3 rounded-xl bg-stone-900 text-white hover:bg-stone-800 hover:text-amber-400 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition font-mono">
+              <i class="fa-brands fa-whatsapp"></i> Request Pizza Box Quote
+            </a>
+          </div>
+        </div>
+
             </div>
           </div>
           <div class="p-6 pt-0">
@@ -364,5 +477,54 @@
     </div>
   </footer>
 
+
+  <!-- STICKY MOBILE BOTTOM BAR -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-stone-300 px-4 py-2.5 flex items-center gap-3 shadow-2xl">
+    <a href="tel:03332622963" class="flex-1 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold text-xs flex items-center justify-center gap-2 font-mono shadow-sm">
+      <i class="fa-solid fa-phone"></i> Call Factory
+    </a>
+    <a href="https://wa.me/923332622963?text=Salam%20Barkat%20Packaging,%20I%20need%20a%20factory%20quote" target="_blank" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 font-mono shadow-sm">
+      <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp RFQ
+    </a>
+  </div>
+
+  <!-- INTERACTIVE CATALOG SEARCH & FILTER SCRIPT -->
+  <script>
+    var activeFilter = 'all';
+
+    function setProductFilter(cat, btn) {
+      activeFilter = cat;
+      document.querySelectorAll('[data-filter]').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      filterProductCatalog();
+    }
+
+    function filterProductCatalog() {
+      var q = (document.getElementById('product-search-input').value || '').toLowerCase().trim();
+      var cards = document.querySelectorAll('.product-card');
+      var visibleCount = 0;
+
+      cards.forEach(function(card) {
+        var cat = card.getAttribute('data-category') || '';
+        var text = card.innerText.toLowerCase();
+
+        var matchesCat = (activeFilter === 'all' || cat.indexOf(activeFilter) !== -1);
+        var matchesQuery = (!q || text.indexOf(q) !== -1);
+
+        if (matchesCat && matchesQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      var countEl = document.getElementById('product-search-count');
+      if (countEl) {
+        countEl.innerText = 'Showing ' + visibleCount + ' of ' + cards.length + ' packaging categories';
+      }
+    }
+  </script>
 </body>
+
 </html>
