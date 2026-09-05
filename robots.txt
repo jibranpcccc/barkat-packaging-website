@@ -24,4 +24,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://jibranpcccc.github.io/barkat-packaging-website/sitemap.xml
+Sitemap: https://barkatcartons.com/sitemap.xml
