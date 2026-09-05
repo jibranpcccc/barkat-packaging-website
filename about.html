@@ -31,26 +31,46 @@
 
   <meta name="description" content="24+ years of corrugated board manufacturing excellence at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh. Continuous corrugation lines, platen die-cutters, wire stitchers, and in-house burst testing." />
 
+  <!-- Geographic & Local Authority Meta Tags -->
+  <meta name="geo.region" content="PK-SD" />
+  <meta name="geo.placename" content="Hyderabad" />
+  <meta name="geo.position" content="25.39689;68.35685" />
+  <meta name="ICBM" content="25.39689, 68.35685" />
+
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- BreadcrumbList Schema -->
+  <!-- BreadcrumbList & AboutPage Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us & Plant Heritage",
+            "item": "https://jibranpcccc.github.io/barkat-packaging-website/about.html"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "About Us & Plant Heritage",
-        "item": "https://jibranpcccc.github.io/barkat-packaging-website/about.html"
+        "@type": "AboutPage",
+        "@id": "https://jibranpcccc.github.io/barkat-packaging-website/about.html#webpage",
+        "url": "https://jibranpcccc.github.io/barkat-packaging-website/about.html",
+        "name": "About Barkat Packaging | Factory Infrastructure & Heritage",
+        "description": "Corrugated packaging manufacturer in Hyderabad, Sindh since May 2000. Operating continuous corrugation lines, platen die-cutters, and quality testing lab at Plot F 9, S.I.T.E.",
+        "mainEntity": {
+          "@id": "https://jibranpcccc.github.io/barkat-packaging-website/#business"
+        }
       }
     ]
   }

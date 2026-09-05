@@ -31,6 +31,12 @@
 
   <meta name="description" content="Calculate custom corrugated box dimensions, blank sheet area, Mullen burst rating, pallet stacking efficiency, and ex-factory pricing from Barkat Packaging, S.I.T.E. Hyderabad." />
 
+  <!-- Geographic & Local Authority Meta Tags -->
+  <meta name="geo.region" content="PK-SD" />
+  <meta name="geo.placename" content="Hyderabad" />
+  <meta name="geo.position" content="25.39689;68.35685" />
+  <meta name="ICBM" content="25.39689, 68.35685" />
+
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -38,23 +44,38 @@
   <!-- Three.js (r128) & OrbitControls -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <!-- BreadcrumbList Schema -->
+  <!-- BreadcrumbList & WebApplication Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Box Calculator",
+            "item": "https://jibranpcccc.github.io/barkat-packaging-website/calculator.html"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Box Calculator",
-        "item": "https://jibranpcccc.github.io/barkat-packaging-website/calculator.html"
+        "@type": "WebApplication",
+        "name": "Corrugated Box Price & Dimension Calculator",
+        "description": "Interactive B2B rate and size estimator for 3-ply, 5-ply, and 7-ply corrugated cartons by Barkat Packaging Hyderabad.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "url": "https://jibranpcccc.github.io/barkat-packaging-website/calculator.html",
+        "provider": {
+          "@id": "https://jibranpcccc.github.io/barkat-packaging-website/#business"
+        }
       }
     ]
   }
