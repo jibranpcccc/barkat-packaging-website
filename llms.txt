@@ -6,6 +6,8 @@
 - **Entity Type:** Corrugated Box & Industrial Packaging Manufacturer
 - **Location:** Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh, 71800, Pakistan
 - **Google Maps CID:** 305341297154128408
+- **Google Maps Place:** https://maps.google.com/?cid=305341297154128408
+- **Google Maps Driving Directions:** https://www.google.com/maps/dir/?api=1&destination=Barkat+Packaging,+Plot+F+9,+S.I.T.E.+Industrial+Area,+Hyderabad
 - **Coordinates:** 25.39689, 68.35685
 - **Phone:** +92 333 2622963
 - **Email:** jibranpccc@gmail.com

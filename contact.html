@@ -34,23 +34,72 @@
   <!-- Google Fonts & Industrial CSS -->
   <link rel="stylesheet" href="assets/css/industrial-theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- BreadcrumbList Schema -->
+  <!-- BreadcrumbList & LocalBusiness Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jibranpcccc.github.io/barkat-packaging-website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact & Location",
+            "item": "https://jibranpcccc.github.io/barkat-packaging-website/contact.html"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Contact & Location",
-        "item": "https://jibranpcccc.github.io/barkat-packaging-website/contact.html"
+        "@type": ["LocalBusiness", "Manufacturer"],
+        "@id": "https://jibranpcccc.github.io/barkat-packaging-website/#business",
+        "name": "Barkat Packaging",
+        "legalName": "Barkat Packaging",
+        "alternateName": ["Barkat Corrugated Boxes", "Barkat Packaging S.I.T.E. Hyderabad"],
+        "description": "Corrugated box manufacturer at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh. Producing 3-ply, 5-ply, 7-ply master cartons, mango export boxes, and custom die-cuts.",
+        "url": "https://jibranpcccc.github.io/barkat-packaging-website/contact.html",
+        "telephone": "+923332622963",
+        "email": "jibranpccc@gmail.com",
+        "priceRange": "$$",
+        "hasMap": [
+          "https://maps.google.com/?cid=305341297154128408",
+          "https://www.google.com/maps/dir/?api=1&destination=Barkat+Packaging,+Plot+F+9,+S.I.T.E.+Industrial+Area,+Hyderabad"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plot F 9, S.I.T.E. Industrial Area",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Sindh",
+          "postalCode": "71800",
+          "addressCountry": "PK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.39689,
+          "longitude": 68.35685
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:30"
+        },
+        "areaServed": [
+          "Hyderabad",
+          "S.I.T.E. Industrial Area",
+          "Kotri Industrial Area",
+          "Jamshoro",
+          "Mirpur Khas",
+          "Tando Allahyar",
+          "Nooriabad",
+          "Sindh"
+        ]
       }
     ]
   }
@@ -156,7 +205,7 @@
             </div>
           </div>
 
-          <!-- EMBEDDED GOOGLE MAP -->
+          <!-- EMBEDDED GOOGLE MAP & NAVIGATION -->
           <div class="bg-white border border-stone-300 rounded p-4 space-y-3">
             <div class="flex justify-between items-center text-xs">
               <span class="font-bold text-stone-900">Factory Map Location</span>
@@ -173,8 +222,44 @@
               allowfullscreen="" 
               loading="lazy">
             </iframe>
+            
+            <!-- 1-TAP DRIVING DIRECTIONS & MAP ACTION BUTTONS -->
+            <div class="flex flex-col sm:flex-row gap-2 pt-1">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Barkat+Packaging,+Plot+F+9,+S.I.T.E.+Industrial+Area,+Hyderabad" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-3.5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs font-semibold rounded transition text-center shadow-sm">
+                <i class="fa-solid fa-diamond-turn-right text-amber-500"></i> Get Driving Directions ↗
+              </a>
+              <a href="https://maps.google.com/?cid=305341297154128408" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-3.5 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold rounded border border-stone-300 transition text-center">
+                <i class="fa-solid fa-location-dot"></i> View GMB Place Card ↗
+              </a>
+            </div>
+
             <div class="text-[11px] text-stone-500">
-              Plot F 9, S.I.T.E. Industrial Area, Hyderabad • Search "Barkat Packaging" on Google Maps for turn-by-turn navigation.
+              Plot F 9, S.I.T.E. Industrial Area, Hyderabad • Search "Barkat Packaging" on Google Maps for real-time turn-by-turn navigation.
+            </div>
+          </div>
+
+          <!-- TRANSPORTATION & FREIGHT ACCESS GUIDE -->
+          <div class="bg-white border border-stone-300 rounded p-4 space-y-3 text-xs text-stone-700">
+            <div class="font-bold text-stone-900 text-sm flex items-center gap-2 border-b border-stone-200 pb-2">
+              <i class="fa-solid fa-truck-moving text-amber-700"></i> Freight &amp; Vehicle Access Guide
+            </div>
+            <div class="space-y-2">
+              <div>
+                <span class="font-semibold text-stone-900">From Karachi / M-9 Motorway:</span>
+                <p class="text-stone-600 mt-0.5">Take the Hyderabad Bypass exit towards S.I.T.E. Industrial Area. Easy 10-12 minute transit from Hyderabad Toll Plaza.</p>
+              </div>
+              <div>
+                <span class="font-semibold text-stone-900">From Kotri Industrial Area &amp; Jamshoro:</span>
+                <p class="text-stone-600 mt-0.5">Direct 5-minute access via Indus Highway and the Kotri Bridge directly entering S.I.T.E.</p>
+              </div>
+              <div>
+                <span class="font-semibold text-stone-900">From Latifabad &amp; Hyderabad City Center:</span>
+                <p class="text-stone-600 mt-0.5">Connect via Auto Bhan Road or S.I.T.E. Main Boulevard directly to Plot F 9.</p>
+              </div>
+              <div>
+                <span class="font-semibold text-stone-900">Commercial Loading &amp; Parking:</span>
+                <p class="text-stone-600 mt-0.5">Wide industrial road frontage with dedicated turning radius for 20ft and 40ft container haulers, Shehzore, and Mazda trucks.</p>
+              </div>
             </div>
           </div>
 
