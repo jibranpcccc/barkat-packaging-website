@@ -25,3 +25,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://barkatcartons.com/sitemap.xml
+Sitemap: https://barkatcartons.com/feed.xml
