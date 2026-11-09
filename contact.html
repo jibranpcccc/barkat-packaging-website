@@ -53,76 +53,86 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- BreadcrumbList & LocalBusiness Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://barkatcartons.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Contact & Location",
-            "item": "https://barkatcartons.com/contact.html"
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://barkatcartons.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact & Location",
+          "item": "https://barkatcartons.com/contact.html"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://barkatcartons.com/#business",
+      "name": "Barkat Packaging",
+      "legalName": "Barkat Packaging",
+      "alternateName": [
+        "Barkat Corrugated Boxes",
+        "Barkat Packaging S.I.T.E. Hyderabad"
+      ],
+      "description": "Corrugated box manufacturer at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh. Producing 3-ply, 5-ply, 7-ply master cartons, mango export boxes, and custom die-cuts.",
+      "url": "https://barkatcartons.com/contact.html",
+      "telephone": "+923332622963",
+      "email": "jibranpccc@gmail.com",
+      "priceRange": "$$",
+      "hasMap": [
+        "https://maps.google.com/?cid=305341297154128408",
+        "https://www.google.com/maps/dir/?api=1&destination=Barkat+Packaging,+Plot+F+9,+S.I.T.E.+Industrial+Area,+Hyderabad"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot F 9, S.I.T.E. Industrial Area",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Sindh",
+        "postalCode": "71800",
+        "addressCountry": "PK"
       },
-      {
-        "@type": ["LocalBusiness", "Manufacturer"],
-        "@id": "https://barkatcartons.com/#business",
-        "name": "Barkat Packaging",
-        "legalName": "Barkat Packaging",
-        "alternateName": ["Barkat Corrugated Boxes", "Barkat Packaging S.I.T.E. Hyderabad"],
-        "description": "Corrugated box manufacturer at Plot F 9, S.I.T.E. Industrial Area, Hyderabad, Sindh. Producing 3-ply, 5-ply, 7-ply master cartons, mango export boxes, and custom die-cuts.",
-        "url": "https://barkatcartons.com/contact.html",
-        "telephone": "+923332622963",
-        "email": "jibranpccc@gmail.com",
-        "priceRange": "$$",
-        "hasMap": [
-          "https://maps.google.com/?cid=305341297154128408",
-          "https://www.google.com/maps/dir/?api=1&destination=Barkat+Packaging,+Plot+F+9,+S.I.T.E.+Industrial+Area,+Hyderabad"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.39689,
+        "longitude": 68.35685
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
         ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Plot F 9, S.I.T.E. Industrial Area",
-          "addressLocality": "Hyderabad",
-          "addressRegion": "Sindh",
-          "postalCode": "71800",
-          "addressCountry": "PK"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 25.39689,
-          "longitude": 68.35685
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "10:00",
-          "closes": "13:30"
-        },
-        "areaServed": [
-          "Hyderabad",
-          "S.I.T.E. Industrial Area",
-          "Kotri Industrial Area",
-          "Jamshoro",
-          "Mirpur Khas",
-          "Tando Allahyar",
-          "Nooriabad",
-          "Sindh"
-        ],
-        "sameAs": [
-          "https://www.facebook.com/p/Barkat-Packaging-61594810884313/"
-        ]
-      }
-    ]
-  }
+        "opens": "10:00",
+        "closes": "13:30"
+      },
+      "areaServed": [
+        "Hyderabad",
+        "S.I.T.E. Industrial Area",
+        "Kotri Industrial Area",
+        "Jamshoro",
+        "Mirpur Khas",
+        "Tando Allahyar",
+        "Nooriabad",
+        "Sindh"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/p/Barkat-Packaging-61594810884313/"
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body class="bg-[#FAF9F6] text-stone-900 antialiased selection:bg-amber-600 selection:text-white pb-20 md:pb-0">
